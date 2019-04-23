@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <form-view></form-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FormView from './view/FormView.vue'
 
 export default {
-  name: 'app',
+  data(){
+    return {
+    }
+  },
   components: {
-    HelloWorld
-  }
+    FormView
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  padding:0;
+  margin:0;
+  background-color:#f6f6f6;
 }
+a {
+  color:#34593e;
+  text-decoration: none;
+}
+a.router-link-exact-active { text-decoration:underline;}
+a:hover {
+  color:cadetblue;
+  text-decoration:underline; 
+}
+ul, li { list-style:none; padding:0;}
+.clear:after { display:block; content:""; clear:both; } 
+.fl-l { float:left; } 
+.fl-r { float:right; } 
+
 </style>
