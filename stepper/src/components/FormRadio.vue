@@ -1,7 +1,7 @@
 <template>
   <section class="question-form">
     <div class="inner">
-      <h2>{{ info.title }}</h2>
+      <h2>{{ info.itemId}}. {{ info.title }}</h2>
       <div class="radio-wrap" v-for="opt in info.options" :key="opt.id" ref="radioList">
         <input type="radio" :id="`opt${opt.id}`" :value="opt.text" v-model="inputResult">
         <label :for="`opt${opt.id}`">{{ opt.text }}</label>

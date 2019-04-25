@@ -36,6 +36,7 @@ a:hover {
 ul, li { list-style:none; padding:0;}
 button { outline-width:0; background:none; border:0; cursor:pointer; }
 textarea { outline-width:0; }
+p { margin:0; }
 .clear:after { display:block; content:""; clear:both; } 
 .fl-l { float:left; } 
 .fl-r { float:right; } 

@@ -1,7 +1,7 @@
 <template>
   <section class="question-form">
     <div class="inner">
-      <h2>{{ info.title }}</h2>
+      <h2>{{ info.itemId}}. {{ info.title }}</h2>
       <div class="checkbox-wrap" v-for="opt in info.options" :key="opt.id" ref="checkboxList">
         <input type="checkbox" :id="`opt${opt.id}`" :value="opt.text" v-model="inputResult">
         <label :for="`opt${opt.id}`">{{ opt.text }}</label>
@@ -55,8 +55,10 @@ export default {
 </script>
 
 <style>
-.question-form h2 { font-size:16px; margin-bottom:25px; }
-.question-form .inner { padding:15px; }
+.question-form { background-color:#fff; box-shadow:0 0 20px rgba(0,0,0,0.1); }
+.question-form h2 { font-size:18px; margin-bottom:25px; }
+.question-form .inner { padding:15px 20px; box-sizing:border-box;}
+.question-form label { font-size:15px; }
 .radio-wrap, .checkbox-wrap { margin-bottom:20px; }
 .radio-wrap input, .checkbox-wrap input { margin-right:10px; }
 </style>

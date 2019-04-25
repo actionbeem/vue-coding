@@ -1,7 +1,7 @@
 <template>
   <section class="question-form">
     <div class="inner">
-      <h2>{{ info.title }}</h2>
+      <h2>{{ info.itemId}}. {{ info.title }}</h2>
       <select v-model="inputResult" ref="selectBox">
         <option disabled value="">답변을 선택해주세요.</option>
         <option v-for="opt in info.options" :key="opt.id" :value="opt.text">{{ opt.text }}</option>

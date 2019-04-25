@@ -1,11 +1,13 @@
 <template>
   <div class="input-form">
-    <ul class="steps" ref="steps">
-      <li v-for="(step, index) in questionData" :key="index">
-        <div class="num">{{ index }}</div>
-        <p class="txt">STEP {{ index }}</p>
-      </li>
-    </ul>
+    <div class="step-container">
+      <ul class="steps" ref="steps">
+        <li v-for="(step, index) in questionData" :key="index">
+          <div class="num">{{ index + 1 }}</div>
+          <p class="txt">STEP {{ index + 1 }}</p>
+        </li>
+      </ul>
+    </div>
     <component :is="whichForm" :info="questionData[stepIndex]"></component>
   </div>
 </template>
@@ -58,11 +60,13 @@ export default {
 </script>
 
 <style scoped>
-.input-form { width:500px; background-color:#fff; margin:100px auto; box-shadow:0 0 20px rgba(0,0,0,0.1);}
+.input-form { width:500px;  margin:100px auto; }
 .question .tit { font-size:18px; font-weight:normal; }
-.steps { display:flex; justify-content:space-between; padding:15px; border-bottom:1px solid #e0e0e0;}
+.step-container { position:relative; height:100px; margin-bottom:50px;}
+.step-container:after { content:""; display:block; width:90%; height:1px; background-color:#e0e0e0; position:absolute; top:46px; left:50%; transform:translate(-50%,0); z-index:0; }
+.steps { position:absolute; top:0; left:0; width:100%; display:flex; justify-content:space-between; padding:15px; box-sizing:border-box; margin:0; z-index:10;   }
 .steps li { display:inline-block;  text-align:center;   }
-.steps li .num { display:inline-block; font-size:26px; width:60px; height:60px; border-radius:50%; background-color:#eee; color:#999; line-height:63px; cursor:pointer; }
+.steps li .num { display:inline-block; font-size:23px; width:45px; height:45px; border-radius:50%; background-color:#eee; color:#999; line-height:48px;   margin-bottom:10px; border:8px solid #f6f6f6; }
 .steps li .txt { font-size:14px; color:#bbb;} 
 .steps li.active .num { background-color:#333; color:#fff; }
 .steps li.active .txt { color:#333;}

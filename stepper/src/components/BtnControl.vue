@@ -1,10 +1,15 @@
 <template>
   <div class="btn-step clear">
     <div class="fl-r">
-      <button class="btn-prev" @click="prevStep">Prev</button>
-
-      <button class="btn-submit" v-if="formCompleted" @click="completeStep">Submit</button>
-      <button class="btn-next" v-else @click="nextStep">Next</button>
+      <button class="btn-prev" @click="prevStep">
+        <i class="fas fa-chevron-right reverse"></i> PREV
+      </button>
+      <button class="btn-submit" v-if="formCompleted" @click="completeStep">
+        SUBMIT
+      </button>
+      <button class="btn-next" v-else @click="nextStep">
+        NEXT <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
   </div>
 </template>
@@ -45,8 +50,10 @@ export default {
 
 
 <style>
-.btn-step { border-top:1px solid #e0e0e0;  padding:20px; }
+.btn-step { border-top:1px solid #e0e0e0;  padding:20px; background-color:#fafafa; }
 .btn-step button { display:inline-block; font-size:15px; background-color:rgb(26, 192, 142); color:#fff; margin-left:10px; padding:10px 22px; border-radius:2px;  }
 .btn-step .btn-prev { background-color:#bbb;}
 .btn-step .btn-submit { background-color:rgb(255, 169, 40);}
+.fa-chevron-right { margin-left:3px;}
+.fa-chevron-right.reverse { transform:rotate(180deg); margin-right:3px;}
 </style>
