@@ -2,7 +2,7 @@
   <section class="question-form">
     <div class="inner">
       <h2>{{ info.title }}</h2>
-      <div class="radio-wrap" v-for="opt in info.options" :key="opt.id">
+      <div class="radio-wrap" v-for="opt in info.options" :key="opt.id" ref="radioList">
         <input type="radio" :id="`opt${opt.id}`" :value="opt.text" v-model="inputResult">
         <label :for="`opt${opt.id}`">{{ opt.text }}</label>
       </div>
@@ -34,6 +34,19 @@ export default {
     inputResult: function(val){
       let answer = { id:2, answer:val }
       this.answerResult.items[1] = answer; 
+    }
+  },
+  mounted(){
+    let answerItem = this.answerResult.items[1];
+    let radioList = this.$refs.radioList;
+    if(answerItem){
+      let prevAnswer = answerItem.answer
+      radioList.forEach(checkItem => {
+        if(checkItem.querySelector('input').value === prevAnswer){
+          checkItem.querySelector('input').checked = true;
+          this.inputResult = prevAnswer;
+        }
+      })
     }
   },
 }

@@ -31,13 +31,13 @@ export default {
   },
   methods: {
     nextStep(){
-      (this.inputValue.length !== 0) ? this.$store.commit('UP_STEP') : alert('answer please')
+      (this.inputValue.length !== 0) ? this.$store.commit('UP_STEP') : alert('답을 작성해주세요.')
     },
     prevStep(){
-      
+      (this.stepIndex > 0) ? this.$store.commit('DOWN_STEP') : alert('첫번째 입니다.')
     },
     completeStep(){
-      console.log(this.answerResult)
+      (this.inputValue.length !== 0) ? alert('답변 결과 : ' + JSON.stringify(this.answerResult.items)) : alert('답을 작성해주세요.')
     }
   },
 }
@@ -47,4 +47,6 @@ export default {
 <style>
 .btn-step { border-top:1px solid #e0e0e0;  padding:20px; }
 .btn-step button { display:inline-block; font-size:15px; background-color:rgb(26, 192, 142); color:#fff; margin-left:10px; padding:10px 22px; border-radius:2px;  }
+.btn-step .btn-prev { background-color:#bbb;}
+.btn-step .btn-submit { background-color:rgb(255, 169, 40);}
 </style>

@@ -2,7 +2,7 @@
   <section class="question-form">
     <div class="inner">
       <h2>{{ info.title }}</h2>
-      <div class="checkbox-wrap" v-for="opt in info.options" :key="opt.id">
+      <div class="checkbox-wrap" v-for="opt in info.options" :key="opt.id" ref="checkboxList">
         <input type="checkbox" :id="`opt${opt.id}`" :value="opt.text" v-model="inputResult">
         <label :for="`opt${opt.id}`">{{ opt.text }}</label>
       </div>
@@ -34,6 +34,21 @@ export default {
     inputResult(val){
       let answer = { id:1, answer:val.join() }
       this.answerResult.items[0] = answer; 
+    }
+  },
+  mounted(){
+    let answerItem = this.answerResult.items[0];
+    let checkboxList = this.$refs.checkboxList;
+    if(answerItem){
+      let prevAnswer = answerItem.answer.split(',');
+      prevAnswer.forEach(answer => {
+        checkboxList.forEach(checkItem => {
+          if(checkItem.querySelector('input').value === answer){
+            checkItem.querySelector('input').checked = true;
+            this.inputResult.push(answer)
+          }
+        })
+      })
     }
   },
 }

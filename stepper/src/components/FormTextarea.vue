@@ -2,7 +2,7 @@
   <section class="question-form">
     <div class="inner">
       <h2>{{ info.title }}</h2>
-      <textarea v-model="inputResult">
+      <textarea v-model="inputResult" ref="textarea">
 
       </textarea>
     </div>
@@ -33,6 +33,15 @@ export default {
     inputResult: function(val){
       let answer = { id:3, answer:val }
       this.answerResult.items[2] = answer; 
+    }
+  },
+  mounted(){
+    let answerItem = this.answerResult.items[2];
+    let textarea = this.$refs.textarea;
+    if(answerItem){
+      let prevAnswer = answerItem.answer
+      textarea.value = prevAnswer;
+      this.inputResult = prevAnswer;
     }
   },
 }

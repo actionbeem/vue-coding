@@ -11,10 +11,14 @@ export const store = new Vuex.Store ({
     answerResult: {
       items:[],
     },
+    testArr: [],
   },
   mutations: {
     UP_STEP(state){
       state.stepIndex += 1;
+    },
+    DOWN_STEP(state){
+      state.stepIndex -= 1;
     }
   },
 })

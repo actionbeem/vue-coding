@@ -2,7 +2,7 @@
   <section class="question-form">
     <div class="inner">
       <h2>{{ info.title }}</h2>
-      <select v-model="inputResult">
+      <select v-model="inputResult" ref="selectBox">
         <option disabled value="">답변을 선택해주세요.</option>
         <option v-for="opt in info.options" :key="opt.id" :value="opt.text">{{ opt.text }}</option>
       </select>
@@ -36,7 +36,20 @@ export default {
       this.answerResult.items[3] = answer; 
     }
   },  
-  
+  mounted(){
+    let answerItem = this.answerResult.items[3];
+    let selectBox = this.$refs.selectBox;
+    if(answerItem){
+      let prevAnswer = answerItem.answer;
+      let options = selectBox.querySelectorAll('option');
+      options.forEach(option => {
+        if(option.value === prevAnswer){
+          option.selected = true;
+          this.inputResult = prevAnswer;
+        }
+      })
+    }
+  },
 }
 </script>
 
