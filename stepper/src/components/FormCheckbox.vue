@@ -1,12 +1,13 @@
 <template>
   <section class="question-form">
     <h2>{{ info.title }}</h2>
-    <textarea v-model="inputResult">
-
-    </textarea>
+    <div class="checkbox-wrap" v-for="opt in info.options" :key="opt.id">
+      <input type="checkbox" :id="`opt${opt.id}`" :value="opt.text" v-model="inputResult">
+      <label :for="`opt${opt.id}`">{{ opt.text }}</label>
+    </div>
     <div>
       <button @click="nextStep">next</button>
-    </div> 
+    </div>
   </section>
 </template>
 
@@ -19,13 +20,13 @@ export default {
   },
   data(){
     return {
-      inputResult: '',
+      inputResult: [],
     }
   },
   watch: {
-    inputResult: function(val){
-      let answer = { id:3, answer:val }
-      this.answerResult.items[2] = answer; 
+    inputResult(val){
+      let answer = { id:1, answer:val.join() }
+      this.answerResult.items[0] = answer; 
     }
   },
   computed: {
@@ -44,5 +45,7 @@ export default {
 </script>
 
 <style>
-.question-form textarea { width:100%; height:150px; border:0; border:1px solid #e0e0e0; resizd:none; }
+.question-form h2 { font-size:16px; margin-bottom:25px; }
+.radio-wrap, .checkbox-wrap { margin-bottom:20px; }
+.radio-wrap input, .checkbox-wrap input { margin-right:10px; }
 </style>

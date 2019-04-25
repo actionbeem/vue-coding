@@ -1,11 +1,20 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import dummyData from '../assets/input.json'
+import questionData from '../assets/input.json'
 
 Vue.use(Vuex)
 
 export const store = new Vuex.Store ({
   state: {
-    dummyData: dummyData.items,
+    questionData: questionData.items,
+    stepIndex: 0,
+    answerResult: {
+      items:[],
+    },
+  },
+  mutations: {
+    UP_STEP(state){
+      state.stepIndex += 1;
+    }
   },
 })

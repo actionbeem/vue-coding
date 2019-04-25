@@ -1,10 +1,6 @@
 <template>
   <div class="input-form">
-    <!-- <div class="question" v-for="item in dummyData" :key="item.itemId">
-      <h2 class="tit">{{ item.title }}</h2>
-    </div> -->
-    <component :is="whichForm"></component>
-    <button @click="nextForm">next</button>
+    <component :is="whichForm" :info="questionData[stepIndex]"></component>
   </div>
 </template>
 
@@ -12,36 +8,29 @@
 import { mapState } from 'vuex'
 
 export default {
-  data(){
-    return {
-      currentIndex: 0,
-    }
-  },
   components: {
+    FormCheckbox: () => import('../components/FormCheckbox.vue'),
     FormRadio: () => import('../components/FormRadio.vue'),
-    FormSelect: () => import('../components/FormSelect.vue'),
     FormTextarea: () => import('../components/FormTextarea.vue'),
+    FormSelect: () => import('../components/FormSelect.vue'),
   },
   computed: {
-    ...mapState(['dummyData']),
+    ...mapState(['questionData','stepIndex']),
 
     whichForm(){
-      switch(this.currentIndex){
+      switch(this.stepIndex){
         case 0 :
-          return 'FormRadio'
+          return 'FormCheckbox'
         case 1 :
-          return 'FormSelect'
+          return 'FormRadio'
         case 2 :
           return 'FormTextarea'
+        case 3 :
+          return 'FormSelect'
       }
     }
   },
-  methods: {
-    nextForm(){
-      this.currentIndex++
-    },
 
-  },
 }
 </script>
 
