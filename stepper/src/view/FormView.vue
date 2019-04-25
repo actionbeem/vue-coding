@@ -35,6 +35,6 @@ export default {
 </script>
 
 <style scoped>
-.input-form { width:500px; padding:15px; background-color:#fff; margin:100px auto; box-shadow:0 0 20px rgba(0,0,0,0.1);}
+.input-form { width:500px; background-color:#fff; margin:100px auto; box-shadow:0 0 20px rgba(0,0,0,0.1);}
 .question .tit { font-size:18px; font-weight:normal; }
 </style>

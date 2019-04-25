@@ -1,20 +1,19 @@
 <template>
   <section class="question-form">
-    <h2>{{ info.title }}</h2>
-    <select v-model="inputResult">
-      <option disabled value="">답변을 선택해주세요.</option>
-      <option v-for="opt in info.options" :key="opt.id" :value="opt.text">{{ opt.text }}</option>
-    </select>
-    <div class="btn-step">
-      <button class="btn-submit" v-if="formCompleted" @click="completeStep">Submit</button>
-      <button class="btn-next" v-else @click="nextStep">Next</button>
+    <div class="inner">
+      <h2>{{ info.title }}</h2>
+      <select v-model="inputResult">
+        <option disabled value="">답변을 선택해주세요.</option>
+        <option v-for="opt in info.options" :key="opt.id" :value="opt.text">{{ opt.text }}</option>
+      </select>
     </div>
+    <btn-control :inputValue="inputResult"></btn-control>
   </section>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import stepCounter from '../mixins/stepCounter.js'
+import BtnControl from './BtnControl.vue'
 
 export default {
   props: {
@@ -26,12 +25,21 @@ export default {
     }
   },
   computed: {
-    ...mapState(['answerResult','questionData','stepIndex']),
+    ...mapState(['answerResult']),
   },  
-  mixins: [stepCounter],
+  components: {
+    BtnControl
+  },
+  watch: {
+    inputResult: function(val){
+      let answer = { id:4, answer:val }
+      this.answerResult.items[3] = answer; 
+    }
+  },  
+  
 }
 </script>
 
 <style>
-
+.question-form select { width:100%; height:30px; outline-width:0; font-size:14px; margin-bottom:40px;}
 </style>

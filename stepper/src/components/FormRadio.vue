@@ -1,20 +1,19 @@
 <template>
   <section class="question-form">
-    <h2>{{ info.title }}</h2>
-    <div class="radio-wrap" v-for="opt in info.options" :key="opt.id">
-      <input type="radio" :id="`opt${opt.id}`" :value="opt.text" v-model="inputResult">
-      <label :for="`opt${opt.id}`">{{ opt.text }}</label>
+    <div class="inner">
+      <h2>{{ info.title }}</h2>
+      <div class="radio-wrap" v-for="opt in info.options" :key="opt.id">
+        <input type="radio" :id="`opt${opt.id}`" :value="opt.text" v-model="inputResult">
+        <label :for="`opt${opt.id}`">{{ opt.text }}</label>
+      </div>
     </div>
-    <div class="btn-step">
-      <button class="btn-submit" v-if="formCompleted" @click="completeStep">Submit</button>
-      <button class="btn-next" v-else @click="nextStep">Next</button>
-    </div>
+    <btn-control :inputValue="inputResult"></btn-control>
   </section>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import stepCounter from '../mixins/stepCounter.js'
+import BtnControl from './BtnControl.vue'
 
 export default {
   props: {
@@ -26,9 +25,11 @@ export default {
     }
   },
   computed: {
-    ...mapState(['answerResult','questionData','stepIndex']),
+    ...mapState(['answerResult']),
   },
-  mixins: [stepCounter],
+  components: {
+    BtnControl
+  },
   watch: {
     inputResult: function(val){
       let answer = { id:2, answer:val }
