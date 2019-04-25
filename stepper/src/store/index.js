@@ -11,7 +11,6 @@ export const store = new Vuex.Store ({
     answerResult: {
       items:[],
     },
-    testArr: [],
   },
   mutations: {
     UP_STEP(state){

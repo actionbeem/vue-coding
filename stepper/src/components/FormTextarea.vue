@@ -2,7 +2,7 @@
   <section class="question-form">
     <div class="inner">
       <h2>{{ info.itemId}}. {{ info.title }}</h2>
-      <textarea v-model="inputResult" ref="textarea">
+      <textarea v-model="inputResult" ref="textarea" placeholder="자유롭게 작성해주세요.">
 
       </textarea>
     </div>

@@ -8,7 +8,9 @@
         </li>
       </ul>
     </div>
-    <component :is="whichForm" :info="questionData[stepIndex]"></component>
+    <transition name="question">
+      <component :is="whichForm" :info="questionData[stepIndex]"></component>
+    </transition>
   </div>
 </template>
 
@@ -71,4 +73,6 @@ export default {
 .steps li.active .num { background-color:#333; color:#fff; }
 .steps li.active .txt { color:#333;}
 
+.question-enter-active { transition: all .3s ease; }
+.question-enter { transform: translateX(20px); opacity: 0; }
 </style>
