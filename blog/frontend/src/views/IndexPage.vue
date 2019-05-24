@@ -28,7 +28,7 @@ export default {
         params: { title: this.title, description: this.description }
       })
         .then(result => {
-          console.log(result)
+          this.$store.dispatch('fetchList')
         })
     }
   }

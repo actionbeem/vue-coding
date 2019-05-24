@@ -1,16 +1,17 @@
-var express = require('express');
-var router = express.Router();
-var db = require('../lib/db')
+const express = require('express');
+const router = express.Router();
+const db = require('../lib/db');
+const shortid = require('shortid');
 
-router.get('/', function(req, res, next) {
-  console.log(db)
-  res.send('success');
+router.get('/', (req, res, next) =>  {
+  const list = db.get('post').value();
+  res.send(list);
 });
 
-router.post('/create', function(req, res, next) {
+router.post('/create', (req, res, next) => {
   const post = req.body.params;
   db.get('post').push({
-    id: 1,
+    id: shortid.generate(),
     ...post
   }).write();
   res.send(post);

@@ -50,7 +50,7 @@ export default {
       let steps = this.$refs.steps;
       let beforeStep = this.beforeStep;
       steps.childNodes[val].classList.add('active');
-      steps.childNodes[beforeStep].classList.remove('active');
+      steps.childNodes[oldVal].classList.remove('active');
       this.beforeStep = val;
     }
   },
