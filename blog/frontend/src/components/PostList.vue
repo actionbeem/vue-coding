@@ -2,10 +2,15 @@
   <div class="list-wrap">
     <ul v-masonry transition-duration="0.3s" class="post-list" item-selector=".post-thumb">
         <li v-masonry-tile class="post-thumb" v-for="post in postList" :key="post.id">
-          <div class="inner">
-            <h2>{{ post.title }}</h2>
-            <div v-html="post.description"></div>
-          </div>
+          <router-link :to="`/post/${post.id}`">
+            <div class="inner">
+              <img class="img-cover" v-if="post.coverImg" :src="post.coverImg">
+              <div class="summary">
+                <p class="ctgr">{{ post.category }}</p>
+                <h2 class="title">{{ post.title }}</h2>
+              </div>
+            </div>
+          </router-link>
         </li>
       </ul>
   </div>
@@ -38,6 +43,9 @@ export default {
 .list-wrap { padding:0 10px; }
 .post-list { padding-left:0; box-sizing:border-box; }
 .post-thumb { width:25%; box-sizing:border-box; padding:10px; }
-.post-thumb .inner { background-color:#ddd; border-radius:5px; padding:15px; box-sizing:border-box; text-align:left; }
-.post-thumb .inner h2 { margin-bottom:5px; }
+.post-thumb .inner { background-color:#ddd; border-radius:5px;  box-sizing:border-box; text-align:left; overflow:hidden;}
+.post-thumb .inner .summary { padding:15px; }
+.post-thumb .inner .ctgr { margin-bottom:7px; color:#666;}
+.post-thumb .inner h2 { margin-bottom:5px; font-size:21px; }
+.post-thumb .img-cover { width:100%; vertical-align:top; }
 </style>

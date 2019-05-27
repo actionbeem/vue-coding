@@ -17,4 +17,11 @@ router.post('/write', (req, res, next) => {
   res.send(post);
 });
 
+router.get('/:pageId', (req, res, next) =>  {
+  const postId = req.params.pageId;
+  const post = db.get('post').find({id:postId}).value();
+  console.log(post)
+  res.send(post);
+});
+
 module.exports = router;

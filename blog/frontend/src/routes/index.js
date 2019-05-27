@@ -5,6 +5,7 @@ Vue.use(Router)
 
 import IndexPage from '../views/IndexPage.vue'
 import WritePage from '../views/WritePage.vue'
+import DetailPage from '../views/DetailPage.vue'
 
 export default new Router ({
   mode: 'history',
@@ -18,6 +19,11 @@ export default new Router ({
       path: '/write',
       name: 'write',
       component: WritePage
+    },
+    {
+      path: '/post/:pageId',
+      name: 'detail',
+      component: DetailPage
     }
   ],
 })
