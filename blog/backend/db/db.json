@@ -2,17 +2,11 @@
   "post": [
     {
       "id": "cgYyz25J7",
-      "title": "공식 라우터",
-      "category": "think",
-      "coverImg": "https://www.insertcart.com/wp-content/uploads/2018/05/thumbnail.jpg",
-      "description": "<p>​<span style=\"background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, sans-serif; font-size: 13px;\">대부분의 단일 페이지 애플리케이션의 경우 공식적으로 지원되는&nbsp;</span><a href=\"https://github.com/vuejs/vue-router\" target=\"_blank\" style=\"background-color: rgb(255, 255, 255); font-family: &quot;Helvetica Neue&quot;, sans-serif; font-size: 13px;\">vue-router library</a><span style=\"background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, sans-serif; font-size: 13px;\">를 사용하는 것이 좋습니다. 자세한 내용은 vue-router의&nbsp;</span><a href=\"https://router.vuejs.org/\" target=\"_blank\" style=\"background-color: rgb(255, 255, 255); font-family: &quot;Helvetica Neue&quot;, sans-serif; font-size: 13px;\">문서</a><span style=\"background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, sans-serif; font-size: 13px;\">를 참조하십시오.</span></p>"
-    },
-    {
-      "id": "cYg7FiP3P",
-      "title": "vue create",
+      "title": "공식 라우터 hoy",
       "category": "dev",
-      "coverImg": "https://cdn-images-1.medium.com/max/1200/1*-8AAdexfOAK9R-AIha_PBQ.png",
-      "description": "<p>테테스트 이미지 업로드</p>"
+      "coverImg": "https://www.insertcart.com/wp-content/uploads/2018/05/thumbnail.jpg",
+      "description": "<p>수정이 제대로 될까요? ​<span style=\"background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, sans-serif; font-size: 13px;\">대부분의 단일 페이지 애플리케이션의 경우 공식적으로 지원되는&nbsp;</span><a href=\"https://github.com/vuejs/vue-router\" target=\"_blank\" style=\"background-color: rgb(255, 255, 255); font-family: &quot;Helvetica Neue&quot;, sans-serif; font-size: 13px;\">vue-router library</a><span style=\"background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, sans-serif; font-size: 13px;\">를 사용하는 것이 좋습니다. 자세한 내용은 vue-router의&nbsp;</span><a href=\"https://router.vuejs.org/\" target=\"_blank\" style=\"background-color: rgb(255, 255, 255); font-family: &quot;Helvetica Neue&quot;, sans-serif; font-size: 13px;\">문서</a><span style=\"background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, sans-serif; font-size: 13px;\">를 참조하십시오.</span></p>",
+      "pageId": "cgYyz25J7"
     }
   ]
 }

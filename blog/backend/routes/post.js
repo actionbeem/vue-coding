@@ -17,6 +17,12 @@ router.post('/write', (req, res, next) => {
   res.send(post);
 });
 
+router.post('/edit', (req, res, next) => {
+  const post = req.body.params;
+  db.get('post').find({id:post.pageId}).assign(post).write();
+  res.send(post);
+});
+
 router.get('/:pageId', (req, res, next) =>  {
   const postId = req.params.pageId;
   const post = db.get('post').find({id:postId}).value();
