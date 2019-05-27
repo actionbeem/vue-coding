@@ -8,7 +8,7 @@ router.get('/', (req, res, next) =>  {
   res.send(list);
 });
 
-router.post('/create', (req, res, next) => {
+router.post('/write', (req, res, next) => {
   const post = req.body.params;
   db.get('post').push({
     id: shortid.generate(),

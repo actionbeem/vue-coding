@@ -24,4 +24,6 @@ body { background-color:#f6f6f6;  }
   margin-top: 60px;
 }
 ul, li { list-style:none; }
+input, textarea, button { outline-width:0; box-sizing:border-box; border:0; }
+button { width:100px; text-align:center; font-size:15px; line-height:46px;cursor:pointer; }
 </style>

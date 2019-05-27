@@ -4,7 +4,7 @@
         <li v-masonry-tile class="post-thumb" v-for="post in postList" :key="post.id">
           <div class="inner">
             <h2>{{ post.title }}</h2>
-            <p>{{ post.description }}</p>
+            <div v-html="post.description"></div>
           </div>
         </li>
       </ul>
