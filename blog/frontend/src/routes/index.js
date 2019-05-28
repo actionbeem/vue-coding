@@ -6,6 +6,7 @@ Vue.use(Router)
 import IndexPage from '../views/IndexPage.vue'
 import WritePage from '../views/WritePage.vue'
 import DetailPage from '../views/DetailPage.vue'
+import LoginPage from '../views/LoginPage.vue'
 
 export default new Router ({
   mode: 'history',
@@ -29,6 +30,11 @@ export default new Router ({
       path: '/post/:pageId',
       name: 'detail',
       component: DetailPage
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginPage
     }
   ],
 })

@@ -40,12 +40,12 @@ export default {
 </script>
 
 <style scoped>
-.list-wrap { padding:0 10px; }
+.list-wrap { width:1200px; margin:100px auto; padding:0 10px; }
 .post-list { padding-left:0; box-sizing:border-box; }
 .post-thumb { width:25%; box-sizing:border-box; padding:10px; }
 .post-thumb .inner { background-color:#ddd; border-radius:5px;  box-sizing:border-box; text-align:left; overflow:hidden;}
 .post-thumb .inner .summary { padding:15px; }
-.post-thumb .inner .ctgr { margin-bottom:7px; color:#666;}
+.post-thumb .inner .ctgr { font-size:15px; margin-bottom:7px; color:#666;}
 .post-thumb .inner h2 { margin-bottom:5px; font-size:21px; }
 .post-thumb .img-cover { width:100%; vertical-align:top; }
 </style>

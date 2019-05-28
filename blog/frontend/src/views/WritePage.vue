@@ -1,8 +1,12 @@
 <template>
   <div class="write-form">
-    <router-link to="/">
+    <router-link v-if="!pageId" to="/">
       <i class="fas fa-arrow-left"></i>
     </router-link>
+    <router-link v-else :to="`/post/${pageId}`">
+      <i class="fas fa-arrow-left"></i>
+    </router-link>
+
     <input type="text" class="title" name="title" placeholder="title" v-model="title">
     <div class="ctgr-wrap">
       <select name="category" id="post-ctgr" v-model="category">
@@ -13,6 +17,7 @@
       </select>
       <i class="fas fa-chevron-down"></i>
     </div>
+
     <input type="text" class="cover-img" name="coverImg" placeholder="cover image url" v-model="coverImg"> 
     <textarea id="post-editor" placeholder="write your think"></textarea>
     <div class="ta-r">
@@ -99,7 +104,6 @@ export default {
     if(this.pageId){
       this.$http.get(`/api/post/${this.pageId}`)
         .then(result => {
-          console.log('결과 : ', result.data)
           const postInfo = result.data;
           this.title = postInfo.title;
           this.coverImg = postInfo.coverImg;
@@ -112,7 +116,7 @@ export default {
 </script>
 
 <style scoped>
-.write-form { padding:0 100px; box-sizing:border-box; text-align:left;}
+.write-form { width:800px; margin:100px auto; box-sizing:border-box; text-align:left;}
 .write-form .title,
 .write-form .cover-img { width:100%; padding:12px; font-size:15px; background-color:#eee; border:0; border-radius:4px; margin-bottom:30px; }
 #post-editor { width:100%; height:300px;}

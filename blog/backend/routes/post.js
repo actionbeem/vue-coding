@@ -23,9 +23,15 @@ router.post('/edit', (req, res, next) => {
   res.send(post);
 });
 
+router.post('/delete/:pageId', (req, res, next) => {
+  const post = req.body.params;
+  db.get('post').remove({id:post.pageId}).write();
+  res.send();
+});
+
 router.get('/:pageId', (req, res, next) =>  {
-  const postId = req.params.pageId;
-  const post = db.get('post').find({id:postId}).value();
+  const pageId = req.params.pageId;
+  const post = db.get('post').find({id:pageId}).value();
   console.log(post)
   res.send(post);
 });
