@@ -4,11 +4,42 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var movieRouter = require('./routes/movie');
-var postRouter = require('./routes/post');
-
 var app = express();
+
+var bodyParser = require('body-parser');
+var compression = require('compression');
+var helmet = require('helmet')
+app.use(helmet());
+
+var session = require('express-session')
+var FileStore = require('session-file-store')(session);
+var flash = require('connect-flash');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(compression());
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  store: new FileStore(),
+}))
+app.use(flash());
+
+var passport = require('./lib/passport')(app)
+
+
+
+
+
+
+
+
+
+
+
+var indexRouter = require('./routes/index');
+var postRouter = require('./routes/post');
+var authRouter = require('./routes/auth')(app, passport);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,8 +52,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/api/movies', movieRouter);
 app.use('/api/post', postRouter);
+app.use('/api/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

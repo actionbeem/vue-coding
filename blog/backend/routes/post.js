@@ -32,7 +32,6 @@ router.post('/delete/:pageId', (req, res, next) => {
 router.get('/:pageId', (req, res, next) =>  {
   const pageId = req.params.pageId;
   const post = db.get('post').find({id:pageId}).value();
-  console.log(post)
   res.send(post);
 });
 
