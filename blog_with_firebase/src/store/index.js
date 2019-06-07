@@ -8,7 +8,6 @@ export const store = new Vuex.Store({
   state: {
     currentUserUid: null,
     postList: {},
-    test: 123,
   },
   mutations: {
     FETCH_USER(state, userUid){

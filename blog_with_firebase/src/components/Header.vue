@@ -4,7 +4,6 @@
       <i class="fas fa-sign-out-alt" v-if="currentUserUid" @click="googleLogout"></i>
       <i class="fas fa-user-circle" v-else @click="googleLogin"></i>
     </div>
-    <!-- <button @click="getData">get data</button> -->
   </div>
 </template>
 
@@ -18,101 +17,32 @@ let db;
 
 export default {
   computed: {
-    ...mapState(['currentUserUid','test'])
+    ...mapState(['currentUserUid'])
   },
   methods: {
     googleLogin(){
-      let auth = firebase.auth();
-      let authProvider = new firebase.auth.GoogleAuthProvider();
-
-      // let aaa = firebase.auth().currentUser;
+      const auth = firebase.auth();
+      const authProvider = new firebase.auth.GoogleAuthProvider();
 
       auth.signInWithPopup(authProvider).then((result) => {
-        let nowUser = result.user;
-        firebase.database().ref(`users/${nowUser.uid}`).set({
-          uid: nowUser.uid,
-          email: nowUser.email,
+        const currentUser = result.user;
+        firebase.database().ref(`users/${currentUser.uid}`).set({
+          uid: currentUser.uid,
+          email: currentUser.email,
         });
-        /*
-        let nowUser = result.user;
-        let newUser = 1111;
-
-        if(nowUser){
-          
-          db = firebase.database();
-          db.ref('users/').once('value', snapshot => {
-            snapshot.forEach(function(user){
-              if(nowUser.uid === user.val().uid){
-                // newUser = false;
-                console.log('new :', newUser)
-              } 
-            })
-          })
-
-          if(newUser){
-            console.log('foot: ', newUser)
-            db.ref('users/').push({
-              uid: nowUser.uid,
-              email: nowUser.email,
-            })
-          }
-
-          // this.$store.commit('FETCH_USER', user);
-        } else {
-          this.$store.commit('REMOVE_USER', user);
-        } 
-        */
-
+        this.$store.commit('FETCH_USER', currentUser.uid)
       })      
 
-      
-      
-
       auth.onAuthStateChanged(currentUser => {
-        // console.log('aaa :', aaa)
-        // if(currentUser){
-        //   let newUser = true;
-        //   db = firebase.database();
-        //   db.ref('users/').once('value', snapshot => {
-        //     snapshot.forEach(function(user){
-        //       if(currentUser.uid === user.val().uid){
-        //         newUser = false;
-        //         return false;
-        //       } 
-        //       console.log('snap: ' , newUser)
-        //     })
-        //   })
 
-        //   if(newUser){
-        //     console.log('foot: ', newUser)
-        //     db.ref('users/').push({
-        //       uid: currentUser.uid,
-        //       email: currentUser.email,
-        //     })
-        //   }
-
-        //   // this.$store.commit('FETCH_USER', user);
-        // } else {
-        //   this.$store.commit('REMOVE_USER', user);
-        // }  
       });    
     },
     googleLogout(){
       firebase.auth().signOut().then(()=> {
         alert('로그아웃 되었습니다.')
+        this.$store.commit('REMOVE_USER')
       }).catch((error) => {});
     },
-    // getData(){
-    //   db = firebase.database();
-    //   db.ref('users/').on('value', snapshot => {
-    //     // console.log('value : ', value)
-    //     const users = snapshot.val();
-    //     snapshot.forEach(function(aaa){
-    //       console.log('key : ', aaa.key)
-    //       console.log('val : ', aaa.val())
-    //     })
-    //   })
-    // },
   }
 }
 </script>
