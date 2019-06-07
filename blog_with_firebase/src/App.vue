@@ -1,48 +1,38 @@
 <template>
   <div id="app">
-    <button class="btn-gl-login" @click.prevent="googleLogin">
-      <!-- <img src="../assets/images/gl_logo.png" alt="구글아이디 로그인 버튼 이미지"> -->
-      <span>Sign in with Google</span>
-    </button>
+    <Header></Header>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import * as firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/database";
+import Header from './components/Header.vue'
 
 export default {
-  methods: {
-    googleLogin(){      
-      let auth = firebase.auth();
-      let authProvider = new firebase.auth.GoogleAuthProvider();
-      let self = this;
-
-      auth.signInWithPopup(authProvider).then(() => {
-        // self.$router.push('/home')
-        console.log('sucess!!')
-      })      
-
-      auth.onAuthStateChanged(user => {
-        if(user){
-          console.log('converting!')
-        } else {
-          console.log('who?')
-        }  
-      });
-    },
+  components: {
+    Header
   }
 }
 </script>
 
 <style>
+* { padding:0; margin:0; }
+body { background-color:#f6f6f6; line-height:1.5; }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Malgun Gothic', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+ul, li { list-style:none; }
+input, textarea, button, select { outline-width:0; box-sizing:border-box; border:0; }
+button { width:100px; text-align:center; font-size:15px; line-height:46px;cursor:pointer; }
+a { color:#222; text-decoration: none; }
+select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }  select::-ms-expand { display: none; }
+.ta-r { text-align:right; }
+.ta-l { text-align:left; }
+.fl-l { float:left; }
+.fl-r { float:right; }
+.clear:after { content:""; display:inline-block; clear:both; }
 </style>
