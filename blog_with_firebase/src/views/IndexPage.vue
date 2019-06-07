@@ -17,12 +17,7 @@ export default {
     ...mapState(['currentUserUid'])
   },
   created(){
-    console.log('current : ', this.currentUserUid)
-    if(this.currentUserUid){
-      console.log('111')
-    } else {
-      console.log('222')
-    }
+
   }
 }
 </script>
