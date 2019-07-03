@@ -103,16 +103,16 @@ export default {
     // },
   },
   mounted(){
-    const test01 = firebase.database().ref();
-    const test02 = firebase.database().ref('post/test');
+    // const test01 = firebase.database().ref();
+    // const test02 = firebase.database().ref('post/test');
     
-    test01.once('value')
-      .then(function(snapshot){
-        let name = snapshot.child('users').val();
-        console.log('name: ', name)
-      })
+    // test01.once('value')
+    //   .then(function(snapshot){
+    //     let name = snapshot.child('users').val();
+    //     console.log('name: ', name)
+    //   })
 
-    console.log(this.currentUserUid)
+    // console.log(this.currentUserUid)
 
     this.editor = suneditor.create('post-editor', {
       plugins: [

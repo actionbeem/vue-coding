@@ -1,17 +1,17 @@
 <template>
   <div>
-    <!-- <post-list></post-list> -->
+    <post-list></post-list>
     <router-link class="btn-write" :to="{ name:'write' , params: { isLogin: currentUserUid } }">write</router-link>
   </div>
 </template>
 
 <script>
-// import PostList from '../components/PostList.vue'
+import PostList from '../components/PostList.vue'
 import { mapState } from 'vuex'
 
 export default {
   components: {
-    // PostList,
+    PostList,
   },
   computed: {
     ...mapState(['currentUserUid'])
