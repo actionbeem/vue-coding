@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <post-list></post-list> -->
-    <router-link class="btn-write" to="/write">write</router-link>
+    <router-link class="btn-write" :to="{ name:'write' , params: { isLogin: currentUserUid } }">write</router-link>
   </div>
 </template>
 

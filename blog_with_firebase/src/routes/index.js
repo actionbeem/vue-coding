@@ -18,7 +18,14 @@ export default new Router ({
     {
       path: '/write',
       name: 'write',
-      component: WritePage
+      component: WritePage,
+      beforeEnter: (to, from, next) => {
+        if (to.params.isLogin) {
+          next();
+        } else {
+          alert('로그인이 필요합니다.')
+        }
+      }
     },
     // {
     //   path: '/write/:pageId',
