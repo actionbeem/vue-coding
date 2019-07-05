@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
 
 import * as firebase from "firebase/app";
 import "firebase/auth";
@@ -33,11 +32,6 @@ export const store = new Vuex.Store({
           let posts = snapshot.child('posts').val();
           commit("FETCH_LIST", posts)
         })
-
-      // axios.get('/api/post/')
-      //   .then(response => {
-      //     commit("FETCH_LIST", response.data)
-      //   })
     }
   },
 })

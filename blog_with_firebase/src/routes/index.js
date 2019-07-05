@@ -28,12 +28,12 @@ export default new Router ({
       }
     },
     {
-      path: '/write/:pageId',
+      path: '/write/:postId',
       name: 'edit',
       component: WritePage
     },
     {
-      path: '/post/:pageId',
+      path: '/post/:postId',
       name: 'detail',
       component: DetailPage
     },

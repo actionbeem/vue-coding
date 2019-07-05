@@ -8,17 +8,20 @@
     <div class="top">
       <h1 class="title">{{ post.title }}</h1>
       <p class="ctgr">{{ post.category }}</p>
-      <div class="control">
-        <button class="btn-delete" @click="deletePost">
-          <span>삭제</span>
-        </button>
-        <router-link :to="`/write/${this.$route.params.pageId}`">
-          <button class="btn-edit">
-            <!-- <i class="far fa-edit"></i> -->
-            <span>수정</span>
+      <template v-if="isAuthor">
+        <div class="control">
+          <button class="btn-delete" @click="deletePost">
+            <span>삭제</span>
           </button>
-        </router-link>
-      </div>
+          <router-link :to="`/write/${this.$route.params.postId}`">
+            <button class="btn-edit">
+              <!-- <i class="far fa-edit"></i> -->
+              <span>수정</span>
+            </button>
+          </router-link>
+        </div>
+      </template>
+
     </div>
     <img class="cover" :src="post.coverImg">
     <div class="desc" v-html="post.description"></div>
@@ -35,22 +38,28 @@ export default {
   data(){
     return {
       post: {},
+      postId: this.$route.params.postId,
+      isAuthor: false,
     }
+  },
+  computed: {
+    ...mapState(['currentUserUid'])
   },
   methods:{
     deletePost(){
-      const pageId = this.$route.params.pageId;
-      firebase.database().ref(`posts/${pageId}`).remove();
+      firebase.database().ref(`posts/${this.postId}`).remove();
       this.$router.push('/')
     }
   },
   created(){
-    const pageId = this.$route.params.pageId;
-    const db = firebase.database().ref(`posts/${pageId}`);
+    const db = firebase.database().ref(`posts/${this.postId}`);
     db.once('value')
       .then(snapshot => {
         let post = snapshot.val();
         this.post = post;
+        if(this.currentUserUid === post.authorID){
+          this.isAuthor = true;
+        }
       })
   }
 }

@@ -1,9 +1,9 @@
 <template>
   <div class="write-form">
-    <router-link v-if="!pageId" to="/">
+    <router-link v-if="!postId" to="/">
       <i class="fas fa-arrow-left"></i>
     </router-link>
-    <router-link v-else :to="`/post/${pageId}`">
+    <router-link v-else :to="`/post/${postId}`">
       <i class="fas fa-arrow-left"></i>
     </router-link>
 
@@ -21,7 +21,7 @@
     <input type="text" class="cover-img" name="coverImg" placeholder="cover image url" v-model="coverImg"> 
     <textarea id="post-editor" placeholder="write your think"></textarea>
     <div class="ta-r">
-      <button class="btn-submit" v-if="!pageId" @click="writePost">submit</button>
+      <button class="btn-submit" v-if="!postId" @click="writePost">submit</button>
       <button class="btn-edit" v-else @click="editPost">edit</button>
     </div>
   </div>
@@ -48,7 +48,7 @@ export default {
       category: "",
       coverImg : null,
       editor: null,
-      pageId: null,
+      postId: null,
     }
   },
   computed: {
@@ -96,7 +96,7 @@ export default {
       const coverImg = this.coverImg;
       const category = this.category;
       const description = this.editor.getContents();
-      firebase.database().ref(`posts/${this.pageId}`).update({
+      firebase.database().ref(`posts/${this.postId}`).update({
         title,
         category,
         coverImg,
@@ -120,9 +120,9 @@ export default {
       lang: lang['ko']
     });
 
-    this.pageId = this.$route.params.pageId;
-    if(this.pageId){
-      const db = firebase.database().ref(`posts/${this.pageId}`);
+    this.postId = this.$route.params.postId;
+    if(this.postId){
+      const db = firebase.database().ref(`posts/${this.postId}`);
       db.once('value')
         .then(snapshot => {
           let post = snapshot.val();
