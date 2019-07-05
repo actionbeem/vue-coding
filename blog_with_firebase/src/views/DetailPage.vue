@@ -9,9 +9,9 @@
       <h1 class="title">{{ post.title }}</h1>
       <p class="ctgr">{{ post.category }}</p>
       <div class="control">
-        <!-- <button class="btn-delete" @click="deletePost">
+        <button class="btn-delete" @click="deletePost">
           <span>삭제</span>
-        </button> -->
+        </button>
         <router-link :to="`/write/${this.$route.params.pageId}`">
           <button class="btn-edit">
             <!-- <i class="far fa-edit"></i> -->
@@ -38,15 +38,11 @@ export default {
     }
   },
   methods:{
-    // deletePost(){
-    //   const pageId = this.$route.params.pageId;
-    //   this.$http.post(`/api/post/delete/${pageId}`, {
-    //     params: { pageId }
-    //   })
-    //     .then(result => {
-    //       this.$router.push('/')
-    //     })
-    // }
+    deletePost(){
+      const pageId = this.$route.params.pageId;
+      firebase.database().ref(`posts/${pageId}`).remove();
+      this.$router.push('/')
+    }
   },
   created(){
     const pageId = this.$route.params.pageId;
@@ -56,12 +52,6 @@ export default {
         let post = snapshot.val();
         this.post = post;
       })
-
-    // const pageId = this.$route.params.pageId;
-    // this.$http.get(`/api/post/${pageId}`)
-    //   .then(result => {
-    //     this.post = result.data
-    //   })s
   }
 }
 </script>
