@@ -57,28 +57,30 @@ export default {
   methods: {
     writePost(){
       const title = this.title;
-      const coverImg = this.coverImg;
       const category = this.category;
+      const coverImg = this.coverImg;
+      const email = null;
       const description = this.editor.getContents();
       if(title){
         if(category){
-          if(description){
-            // this.$http.post('/api/post/write', {
-            //   params: { title, category, coverImg, description } 
-            // })
-            //   .then(result => {
-            //     this.$router.push('/')
-            //   })
-            firebase.database().ref(`post/`).push({
-              author: this.currentUserUid,
+          if(description){            
+            const user = firebase.database().ref(`users/${this.currentUserUid}`)
+            user.once('value')
+              .then(snapshot => {
+                console.log('메일 :', snapshot.val().email)
+                this.email = snapshot.val().email;
+              })
+
+            firebase.database().ref(`posts/`).push({
+              authorID: this.currentUserUid,
+              authorEmail: this.email,
               title,
-              coverImg,
               category,
+              coverImg,
               description 
             });
 
             this.$router.push('/')
-            alert('ok')
           } else {
             alert('내용을 입력해주세요.')
           }
@@ -89,31 +91,21 @@ export default {
         alert('제목을 입력해주세요.')
       }
     },
-    // editPost(){
-    //   const title = this.title;
-    //   const coverImg = this.coverImg;
-    //   const category = this.category;
-    //   const description = this.editor.getContents();
-    //   this.$http.post('/api/post/edit', {
-    //     params: { pageId:this.pageId, title, coverImg, category, description }
-    //   })
-    //     .then(result => {
-    //       this.$router.push(`/post/${this.pageId}`)
-    //     })
-    // },
+    editPost(){
+      const title = this.title;
+      const coverImg = this.coverImg;
+      const category = this.category;
+      const description = this.editor.getContents();
+      firebase.database().ref(`posts/${this.pageId}`).update({
+        title,
+        category,
+        coverImg,
+        description
+      })
+      this.$router.push('/')
+    },
   },
   mounted(){
-    // const test01 = firebase.database().ref();
-    // const test02 = firebase.database().ref('post/test');
-    
-    // test01.once('value')
-    //   .then(function(snapshot){
-    //     let name = snapshot.child('users').val();
-    //     console.log('name: ', name)
-    //   })
-
-    // console.log(this.currentUserUid)
-
     this.editor = suneditor.create('post-editor', {
       plugins: [
         font,
@@ -128,17 +120,18 @@ export default {
       lang: lang['ko']
     });
 
-    // this.pageId = this.$route.params.pageId;
-    // if(this.pageId){
-    //   this.$http.get(`/api/post/${this.pageId}`)
-    //     .then(result => {
-    //       const postInfo = result.data;
-    //       this.title = postInfo.title;
-    //       this.coverImg = postInfo.coverImg;
-    //       this.category = postInfo.category;
-    //       this.description = this.editor.setContents(postInfo.description);
-    //     })
-    // }
+    this.pageId = this.$route.params.pageId;
+    if(this.pageId){
+      const db = firebase.database().ref(`posts/${this.pageId}`);
+      db.once('value')
+        .then(snapshot => {
+          let post = snapshot.val();
+          this.title = post.title;
+          this.category = post.category;
+          this.coverImg = post.coverImg;
+          this.description = this.editor.setContents(post.description);
+        })
+    }
   }
 }
 </script>

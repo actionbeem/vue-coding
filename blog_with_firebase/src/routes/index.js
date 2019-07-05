@@ -27,11 +27,11 @@ export default new Router ({
         }
       }
     },
-    // {
-    //   path: '/write/:pageId',
-    //   name: 'edit',
-    //   component: WritePage
-    // },
+    {
+      path: '/write/:pageId',
+      name: 'edit',
+      component: WritePage
+    },
     {
       path: '/post/:pageId',
       name: 'detail',

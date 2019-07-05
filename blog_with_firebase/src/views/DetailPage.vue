@@ -9,9 +9,9 @@
       <h1 class="title">{{ post.title }}</h1>
       <p class="ctgr">{{ post.category }}</p>
       <div class="control">
-        <button class="btn-delete" @click="deletePost">
+        <!-- <button class="btn-delete" @click="deletePost">
           <span>삭제</span>
-        </button>
+        </button> -->
         <router-link :to="`/write/${this.$route.params.pageId}`">
           <button class="btn-edit">
             <!-- <i class="far fa-edit"></i> -->
@@ -34,7 +34,7 @@ import { mapState } from 'vuex'
 export default {
   data(){
     return {
-      post: '441',
+      post: {},
     }
   },
   methods:{
@@ -50,12 +50,11 @@ export default {
   },
   created(){
     const pageId = this.$route.params.pageId;
-    const db = firebase.database().ref(`post/${pageId}`);
-    const vm = this;
+    const db = firebase.database().ref(`posts/${pageId}`);
     db.once('value')
-      .then(function (snapshot) {
+      .then(snapshot => {
         let post = snapshot.val();
-        vm.post = post;
+        this.post = post;
       })
 
     // const pageId = this.$route.params.pageId;

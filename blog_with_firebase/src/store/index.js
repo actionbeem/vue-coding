@@ -20,8 +20,8 @@ export const store = new Vuex.Store({
     REMOVE_USER(state){
       state.currentUserUid = null;
     },
-    FETCH_LIST(state, post){
-      state.postList = post
+    FETCH_LIST(state, posts){
+      state.postList = posts
     }
   },
   actions: {
@@ -29,10 +29,9 @@ export const store = new Vuex.Store({
       const db = firebase.database().ref();
 
       db.once('value')
-        .then(function (snapshot) {
-          let post = snapshot.child('post').val();
-          console.log('posts :', post.key)
-          commit("FETCH_LIST", post)
+        .then(snapshot => {
+          let posts = snapshot.child('posts').val();
+          commit("FETCH_LIST", posts)
         })
 
       // axios.get('/api/post/')
