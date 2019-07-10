@@ -13,6 +13,8 @@ import "firebase/auth";
 import "firebase/database";
 import { mapState } from 'vuex'
 
+let db;
+
 export default {
   computed: {
     ...mapState(['currentUserUid'])

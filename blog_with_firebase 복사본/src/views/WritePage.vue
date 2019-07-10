@@ -41,8 +41,6 @@ import "firebase/auth";
 import "firebase/database";
 import { mapState } from 'vuex'
 
-import $ from "jquery";
-
 export default {
   data(){
     return {
@@ -134,16 +132,11 @@ export default {
           this.description = this.editor.setContents(post.description);
         })
     }
-
-    let test = $('.test')
-    console.log('제이쿼리 : ', test)
   }
 }
 </script>
 
 <style scoped>
-@import '../../node_modules/suneditor/dist/css/suneditor.min.css';
-
 .write-form { width:800px; margin:100px auto; box-sizing:border-box; text-align:left;}
 .write-form .title,
 .write-form .cover-img { width:100%; padding:12px; font-size:15px; background-color:#eee; border:0; border-radius:4px; margin-bottom:30px; }
