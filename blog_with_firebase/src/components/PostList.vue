@@ -54,27 +54,18 @@ export default {
     fatchCategory(category){
       this.selectedCategory = category; 
     },
-    // setCategory(){
-    //   const list = Object.values(this.postList)
-    //   // const categories = [];
-    //   console.log(list)
-    //   const categories = list.map(val => val.category)
-    //   console.log(categories)
-    // }
   },
   created(){
     this.$store.dispatch('fetchList')
   },
-  // mounted(){
-  //   this.setCategory();
-  // }
 }
 </script>
 
 <style scoped>
 .btn-ctgr  { text-align:center; margin-bottom:30px; }
-.btn-ctgr li { display:inline-block; padding:8px 24px; background-color:#fff; border-radius:25px; margin:0 8px; cursor:pointer; }
+.btn-ctgr li { display:inline-block; padding:8px 24px; border:1px solid transparent; border-radius:25px; margin:0 8px; cursor:pointer; }
 .btn-ctgr li.active { background-color:#222; color:#fff; }
+.btn-ctgr li:hover { border-color:#222; transition: all .5s ease; }
 .list-wrap { width:1200px; margin:100px auto; padding:0 10px; }
 .post-list { padding-left:0; box-sizing:border-box; }
 .post-thumb {  width:25%; box-sizing:border-box; padding:10px; }

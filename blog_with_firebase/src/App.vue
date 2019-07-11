@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Header></Header>
-    <router-view></router-view>
+    <transition name="slide-fade">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -36,4 +38,8 @@ select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }  s
 .fl-r { float:right; }
 .clear:after { content:""; display:inline-block; clear:both; }
 .hide { display:none; }
+
+.slide-fade-enter-active { transition: all .3s ease; }
+.slide-fade-leave-active { transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0); }
+.slide-fade-enter, .slide-fade-leave-to { transform: translateY(20px); opacity: 0; }
 </style>

@@ -37,26 +37,5 @@ export default {
 </script>
 
 <style>
-.container {
-	padding: 20px;
-	width: 90%;
-	max-width: 400px;
-	margin: 0 auto;
-}
 
-label {
-	display: block;
-	line-height: 1.5em;
-}
-
-ul {
-	margin-left: 0;
-	padding-left: 0;
-	list-style: none;
-}
-
-li {
-	padding: 8px 16px;
-	border-bottom: 1px solid #eee;
-}
 </style>
