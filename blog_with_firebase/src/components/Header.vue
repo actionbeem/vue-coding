@@ -29,6 +29,7 @@ export default {
           email: currentUser.email,
         });
         this.$store.commit('FETCH_USER', currentUser.uid)
+        this.$router.push('/')
       })      
 
       auth.onAuthStateChanged(currentUser => {
@@ -39,6 +40,7 @@ export default {
       firebase.auth().signOut().then(()=> {
         alert('로그아웃 되었습니다.')
         this.$store.commit('REMOVE_USER')
+        this.$router.push('/')
       }).catch((error) => {});
     },
   }

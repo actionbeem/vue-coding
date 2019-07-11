@@ -11,9 +11,9 @@
     <div class="ctgr-wrap">
       <select name="category" id="post-ctgr" v-model="category">
         <option disabled value="">select category</option>
-        <option value="think">think</option>
-        <option value="dev">dev</option>
-        <option value="design">design</option>
+        <option value="Think">Think</option>
+        <option value="Dev">Dev</option>
+        <option value="Design">Design</option>
       </select>
       <i class="fas fa-chevron-down"></i>
     </div>

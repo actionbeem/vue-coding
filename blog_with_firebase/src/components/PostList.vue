@@ -31,15 +31,16 @@ Vue.use(VueMasonryPlugin)
 export default {
   data(){
     return {
-      categories: ['all', 'dev', 'design', 'think'],
-      selectedCategory: 'all',
+      categories: ['All', 'Dev', 'Design', 'Think'],
+      selectedCategory: 'All',
     }
   },
   computed: {
     ...mapState(['postList']),
+
     filterList(){
       const filteredList = Object.entries(this.postList);
-      if(this.selectedCategory === 'all'){
+      if(this.selectedCategory === 'All'){
         return filteredList;
       } else {
         return filteredList.filter((post) => {
@@ -47,15 +48,26 @@ export default {
         })
       }
     },
+
   },
   methods: {
     fatchCategory(category){
       this.selectedCategory = category; 
     },
+    // setCategory(){
+    //   const list = Object.values(this.postList)
+    //   // const categories = [];
+    //   console.log(list)
+    //   const categories = list.map(val => val.category)
+    //   console.log(categories)
+    // }
   },
   created(){
     this.$store.dispatch('fetchList')
   },
+  // mounted(){
+  //   this.setCategory();
+  // }
 }
 </script>
 

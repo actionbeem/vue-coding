@@ -21,12 +21,7 @@ export const store = new Vuex.Store({
     },
     FETCH_LIST(state, posts){
       state.postList = posts;
-      // const convertArray = [];
-      // for (let key in posts) {
-      //   convertArray.push(posts[key])
-      // }
-      // state.postList = convertArray;
-    }
+    },
   },
   actions: {
     fetchList({ commit }){
