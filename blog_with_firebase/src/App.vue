@@ -35,4 +35,5 @@ select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }  s
 .fl-l { float:left; }
 .fl-r { float:right; }
 .clear:after { content:""; display:inline-block; clear:both; }
+.hide { display:none; }
 </style>

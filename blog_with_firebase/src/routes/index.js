@@ -6,6 +6,7 @@ Vue.use(Router)
 import IndexPage from '../views/IndexPage.vue'
 import WritePage from '../views/WritePage.vue'
 import DetailPage from '../views/DetailPage.vue'
+import TestPage from '../views/TestPage.vue'
 
 export default new Router ({
   mode: 'history',
@@ -36,6 +37,11 @@ export default new Router ({
       path: '/post/:postId',
       name: 'detail',
       component: DetailPage
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: TestPage
     },
   ],
 })
