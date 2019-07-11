@@ -20,11 +20,12 @@ export const store = new Vuex.Store({
       state.currentUserUid = null;
     },
     FETCH_LIST(state, posts){
-      const convertArray = [];
-      for (let key in posts) {
-        convertArray.push(posts[key])
-      }
-      state.postList = convertArray;
+      state.postList = posts;
+      // const convertArray = [];
+      // for (let key in posts) {
+      //   convertArray.push(posts[key])
+      // }
+      // state.postList = convertArray;
     }
   },
   actions: {
