@@ -74,5 +74,6 @@ export default {
 .post-thumb .inner .ctgr { font-size:15px; margin-bottom:7px; color:#666;}
 .post-thumb .inner h2 { margin-bottom:5px; font-size:21px; }
 .post-thumb .img-cover { width:100%; vertical-align:top; }
+.post-list li:hover { transform:scale(1.1); transition:all .2s ease; z-index:1000; }
 </style>
 
