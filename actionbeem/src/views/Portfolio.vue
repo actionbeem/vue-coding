@@ -8,33 +8,40 @@
       <ul class="filter">
         <li v-for="(category, index) in categories" :class="{ active: selectedCategory === category }" @click="fetchCategory(category)" :key="index">{{ category }}</li>
       </ul>
-      <ul class="work-list clear">
-        <li v-for="(work, index) in fetchWorkList" :style="{ 'background' : 'url(' + require('../assets/images/' + work.imgUrl + '.jpg') + ')'}" :key="index">
-            <div class="info" :class="work.category" >
-              <p class="ctgr">{{ work.imgUrl }}</p>
-              <p class="ctgr">{{ work.category }}</p>
-              <p class="tit">{{ work.title }}</p>
-            </div>
-        </li>
-      </ul>
-    </div>
 
+      <vue-custom-scrollbar class="scroll-area"  :settings="settings">  
+        <ul class="work-list clear">
+          <li v-for="(work, index) in fetchWorkList" :style="{ 'background-image' : 'url(' + require('../assets/images/' + work.imgUrl + '.jpg') + ')' , 'background-size' : 'cover'}" :key="index">
+              <div class="info" :class="work.category" >
+                <p class="ctgr">{{ work.category }}</p>
+                <p class="tit">{{ work.title }}</p>
+              </div>
+          </li>
+        </ul>
+      </vue-custom-scrollbar> 
+    </div>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import vueCustomScrollbar from 'vue-custom-scrollbar'
 
 export default {
+  components: {
+    vueCustomScrollbar
+  },
   data(){
     return {
       categories: ['All', 'Publish', 'Design', 'Competition'],
-      selectedCategory: 'All'
+      selectedCategory: 'All',
+      settings: {
+        maxScrollbarLength: 60
+      }
     }
   },
   computed: {
     ...mapState(['db']),
-    
     fetchWorkList(){
       if(this.selectedCategory === 'All'){
         return this.db.works;
@@ -49,9 +56,13 @@ export default {
   methods: {
     fetchCategory(category){
       this.selectedCategory = category;
-    },
-
+    }
   },
+  mounted(){
+    // $(window).on("load",function(){
+    //     $(".work-list").mCustomScrollbar();
+    // });
+  }
 }
 </script>
 
@@ -69,4 +80,9 @@ export default {
 .work-list .info .ctgr { font-size: 14px; }
 .work-list .info .tit { font-size: 22px; }
 .test { height:240px;}
+
+.scroll-area {
+  width: 420px;
+  height: 100vh;
+}
 </style>
