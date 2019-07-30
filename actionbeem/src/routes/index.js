@@ -4,7 +4,8 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 import IndexPage from '../views/IndexPage.vue'
-import Portfolio from '../views/Portfolio.vue'
+import Work from '../views/Work.vue'
+import DetailPage from '../views/DetailPage.vue'
 
 export default new Router ({
   mode: 'history',
@@ -16,8 +17,13 @@ export default new Router ({
     },
     {
       path: '/work',
-      name: 'portfolio',
-      component: Portfolio
+      name: 'Work',
+      component: Work
+    },
+    {
+      path: '/detail/:workId',
+      name: 'detail',
+      component: DetailPage
     }
   ],
 });
