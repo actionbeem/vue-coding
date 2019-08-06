@@ -14,7 +14,13 @@
         <ul class="work-list clear">
           <!-- <transition-group name="work-list"> -->
           <li v-for="(work, index) in fetchWorkList" :style="{ 'background-image' : 'url(' + require('../assets/images/' + work.imgUrl + '.jpg') + ')' , 'background-size' : 'cover'}" :key="index">
-            <router-link :to="`/detail/${work.id}`">
+            <a v-if="work.linkExternal" :href="work.linkExternal">
+              <div class="info" :class="work.category" >
+                <p class="ctgr">{{ work.category }}</p>
+                <p class="tit">{{ work.title }}</p>
+              </div>
+            </a>
+            <router-link v-else :to="`/detail/${work.id}`">
               <div class="info" :class="work.category" >
                 <p class="ctgr">{{ work.category }}</p>
                 <p class="tit">{{ work.title }}</p>

@@ -23,9 +23,16 @@ body { font-family: "Noto Sans KR", sans-serif; }
 ul, li { list-style:none; margin:0; padding:0; }
 a { text-decoration: none; }
 input, select { outline-width:0; }
-.fl-l { flaot:left; }
-.fl-r { flaot:right; }
+.fl-l { float:left; }
+.fl-r { float:right; }
 .clear:after { content:""; display:inline-block; clear:both;}
 .ta-l { text-align:left; }
 .ta-r { text-align:right; }
+
+.mb-10 { margin-bottom:10px }
+.mb-20 { margin-bottom:20px }
+.mb-30 { margin-bottom:30px }
+.mb-40 { margin-bottom:40px }
+.mb-50 { margin-bottom:50px }
+
 </style>
