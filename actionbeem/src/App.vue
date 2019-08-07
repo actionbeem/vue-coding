@@ -25,7 +25,7 @@ a { text-decoration: none; }
 input, select { outline-width:0; }
 .fl-l { float:left; }
 .fl-r { float:right; }
-.clear:after { content:""; display:inline-block; clear:both;}
+.clear:after { content:""; display:block; clear:both;}
 .ta-l { text-align:left; }
 .ta-r { text-align:right; }
 

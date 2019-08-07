@@ -49,7 +49,7 @@ export default {
   },
   data(){
     return {
-      categories: ['All', 'Publish', 'Design', 'Competition'],
+      categories: ['All', 'Publish', 'Design', 'Idea'],
       snsIcon: ['fb', 'kakao', 'insta', 'twt'],
       selectedCategory: 'All',
       settings: {

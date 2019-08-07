@@ -4,26 +4,39 @@
       "id": 1,
       "category": "Publish",
       "title": "Upside Universe",
-      "imgUrl": "design_01",
-      "linkExternal": "https://www.naver.com"
+      "imgUrl": "thumb/site/thumb_site_hyungji",
+      "description": "패션그룹형지의 본사 공식 직영 쇼핑몰 - 형지몰",
+      "linkExternal": "https://hyungjimall.com/"
     },
     {
       "id": 2,
       "category": "Design",
-      "title": "Amazon Retail",
-      "imgUrl": "design_02"
+      "title": "Megabox App",
+      "imgUrl": "thumb/design/thumb_megabox",
+      "description": "메가박스 앱 리디자인",
+      "imgDetail": [
+        "detail/design/mega_01",
+        "detail/design/mega_02",
+        "detail/design/mega_03",
+        "detail/design/mega_04"
+      ]
     },
     {
       "id": 3,
-      "category": "Competition",
+      "category": "Idea",
       "title": "Operaen",
       "imgUrl": "design_03"
     },
     {
       "id": 4,
-      "category": "Design",
-      "title": "Housing rental poop",
-      "imgUrl": "design_02"
+      "category": "Idea",
+      "title": "스케쳐스_신을수록 잡히는 라인",
+      "imgUrl": "thumb/idea/thumb_idea_01",
+      "description": "HS AD 광고공모전 인쇄광고부문. '몸매를 보정해주는 런닝화'라는 메시지를 한 눈에 전달하기 위해 제작한 광고이다.",
+      "imgDetail": [
+        "detail/idea/detail_idea_01"
+      ],
+      "imgDirection": "vertical"
     },
     {
       "id": 5,
@@ -33,7 +46,7 @@
     },
     {
       "id": 6,
-      "category": "Competition",
+      "category": "Idea",
       "title": "Operaen",
       "imgUrl": "design_03"
     },
