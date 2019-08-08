@@ -9,8 +9,8 @@
       </p>
     </div>
     <div class="img-area fl-r">
-      <template v-for="detail in currentWork.imgDetail">
-        <img class="img-detail" :src="require(`../assets/images/${detail}.jpg`)" alt="상세 이미지">
+      <template v-for="detail in currentWork.img.detail">
+        <img class="img-detail" :class="{ isSingle : isSingle }" :src="require(`../assets/images/${detail}`)" alt="상세 이미지">
       </template>
       <!-- <img class="img-detail" src="../assets/images/detail/idea/detail_idea_07.jpg" style="width:auto; height:100vh;" alt="상세 이미지"> -->
     </div>
@@ -38,6 +38,13 @@ export default {
         return workId === work.id
       })
       return current[0]
+    },
+    isSingle(){
+      if(this.currentWork.img.detail.length > 1){
+        return false;
+      } else {
+        return true;
+      }
     }
   },
   mounted(){
@@ -52,6 +59,7 @@ export default {
 .page-detail .category { font-size:18px; color:#aaa; }
 .page-detail .title { font-size:40px; font-family: 'Roboto', sans-serif;color:#333;  }
 .page-detail .description { font-size:15px; color:#777; } 
-.page-detail .img-area { width:65%; }
+.page-detail .img-area { width:65%; position:relative; }
 .page-detail .img-area .img-detail { width:100%; vertical-align:top; }
+.page-detail .img-area .img-detail.isSingle { width:auto; height:100vh;  position:absolute; top:0; right:0;}
 </style>

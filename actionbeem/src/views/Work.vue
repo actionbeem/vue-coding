@@ -13,8 +13,8 @@
       <vue-custom-scrollbar class="scroll-area"  :settings="settings">
         <ul class="work-list clear">
           <!-- <transition-group name="work-list"> -->
-          <li v-for="(work, index) in fetchWorkList" :style="{ 'background-image' : 'url(' + require('../assets/images/' + work.imgUrl + '.jpg') + ')' , 'background-size' : 'cover'}" :key="index">
-            <a v-if="work.linkExternal" :href="work.linkExternal">
+          <li v-for="(work, index) in fetchWorkList" :style="{ 'background-image' : 'url(' + require('../assets/images/' + work.img.thumb) + ')' , 'background-size' : 'cover'}" :key="index">
+            <a v-if="work.linkExternal" :href="work.linkExternal" target="blank">
               <div class="info" :class="work.category" >
                 <p class="ctgr">{{ work.category }}</p>
                 <p class="tit">{{ work.title }}</p>
