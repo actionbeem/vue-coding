@@ -28,9 +28,9 @@
 
   <div class="wrapper">
     <ul class="accordion-menu">
-      <li class="tab" v-for="(menu, index) in sideMenu" :key="index" @click="toggle(index)" :class="{ active: menu.active }">
+      <li class="tab" v-for="(menu, index) in sideMenu" :key="index" @click="toggleMenu(index)" :class="{ active: menu.active }">
         <p class="tit">{{ menu.title }}</p>
-        <!-- <img class="icon-plus" src="../assets/images/icon_plus.png" alt=""> -->
+        <img class="icon-arrow" src="../assets/images/icon_plus.png" alt="">
         <slide-up-down :active="menu.active" :duration="500">
           <ul class="dep2">
             <li v-for="list in menu.dep2" :key="list">{{ list }}</li>
@@ -51,35 +51,41 @@ export default {
   name: 'Accordion',
   data(){
     return {
-      myBoolean: false,
+      pastIndex: null,
       sideMenu: [
         { 
-          title: "tab01",
-          active: true,
-          dep2: ["aaa","bbb","ccc"]
+          title: "menu01",
+          active: false,
+          dep2: ["01. 리스트 내용입니다.","02. 리스트 내용입니다.","03.리스트 내용입니다."]
         },
         { 
-          title: "tab02",
+          title: "menu02",
           active: false,
-          dep2: ["ddd","eee","fff"]
+          dep2: ["01. 리스트 내용입니다.","02. 리스트 내용입니다.","03.리스트 내용입니다."]
         },
         { 
-          title: "tab03",
+          title: "menu03",
           active: false,
-          dep2: ["zzz","xxx","yyy"]
+          dep2: ["01. 리스트 내용입니다.","02. 리스트 내용입니다.","03.리스트 내용입니다."]
+        },
+        { 
+          title: "menu04",
+          active: false,
+          dep2: ["01. 리스트 내용입니다.","02. 리스트 내용입니다.","03.리스트 내용입니다."]
+        },
+        { 
+          title: "menu05",
+          active: false,
+          dep2: ["01. 리스트 내용입니다.","02. 리스트 내용입니다.","03.리스트 내용입니다."]
         },
       ]
     }
   },
   methods: {
-    toggle(index){
-      this.sideMenu.forEach(val => val.active = false);
-      this.sideMenu[index].active = !this.sideMenu[index].active
-    },
-    myActive(){
-      this.myBoolean = !this.myBoolean;
-      console.log(this.myBoolean)
-      return this.myBoolean;
+    toggleMenu(index){
+      if(this.pastIndex !== index) this.sideMenu.forEach(val => val.active = false);
+      this.sideMenu[index].active = !this.sideMenu[index].active;
+      this.pastIndex = index;
     }
   },
 }
@@ -92,20 +98,15 @@ ul { list-style-type: none; padding: 0; }
 li { margin:0; }
 a { color: #42b983; }
 
-.wrapper { text-align:left; }
+.wrapper { width:500px; margin:0 auto; text-align:left; }
 .accordion-menu {  background-color:#fff; }
-.accordion-menu .tab {  cursor:pointer; margin-bottom:2px; position:relative;  }
-.accordion-menu .tab .tit { line-height:50px; text-align:left; padding:0 15px; background-color:#eee;  }
+.accordion-menu .tab {  cursor:pointer; position:relative;  }
+.accordion-menu .tab .tit { line-height:50px; text-align:left; padding:0 15px; border-radius:3px; border-bottom:1px solid #eee; }
+/* .accordion-menu .tab .tit:hover { background-color:#eee; transition:all .3s ease;} */
 .accordion-menu .tab .dep2 { background-color:#fff; }
-.accordion-menu .tab .dep2 li { padding:0 15px; line-height:3;}
-.accordion-menu .tab .icon-plus { width:18px; position:absolute; top:8px; right:15px; }
-/*
-.slide-fade-enter-active, .slide-fade-leave-active {
-  transition:all .2s ease;
-}
-.slide-fade-enter, .slide-fade-leave-to {
-  // transform: translateX(10px);
-  opacity:0;
-}
-*/
+.accordion-menu .tab.active .dep2 { background-color:#f6f6f6; }
+.accordion-menu .tab .dep2 li { padding:0 15px; line-height:2.5; font-size:14px; color:#aaa;}
+.accordion-menu .tab .icon-arrow { width:16px; position:absolute; top:17px; right:17px; transform:rotate(0deg); transition:all .6s ease; }
+/* .accordion-menu .tab.active .tit { border-color: #eee;} */
+.accordion-menu .tab.active .icon-arrow { transform:rotate(135deg); transition:all .6s ease; }
 </style>
