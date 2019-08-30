@@ -1,31 +1,4 @@
 <template>
-<!--
-  <div class="wrapper">
-    <ul class="accordion-menu">
-      <li class="tab" v-for="(menu, index) in sideMenu" :key="index" @click="toggle(index)" :class="{ active: menu.active }">
-        <p class="tit">{{ menu.title }}</p>
-        <transition name="slide-fade">
-          <ul class="dep2">
-            <li v-for="list in menu.dep2" :key="list">{{ list }}</li>
-          </ul>
-        </transition>
-      </li>
-    </ul>
-
-    <div class="MyContent">
-      <h1 @click="myActive">Always show this</h1>
-    
-      <slide-up-down :active="myBoolean" :duration="500">
-        Only show this if "active” is true<br>
-        Only show this if "active” is true<br>
-        Only show this if "active” is true<br>
-        Only show this if "active” is true<br>
-        Only show this if "active” is true
-      </slide-up-down>
-    </div>
-  </div>
--->
-
   <div class="wrapper">
     <ul class="accordion-menu">
       <li class="tab" v-for="(menu, index) in sideMenu" :key="index" @click="toggleMenu(index)" :class="{ active: menu.active }">
@@ -91,7 +64,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 { margin: 40px 0 0; }
 ul { list-style-type: none; padding: 0; }
@@ -102,11 +74,8 @@ a { color: #42b983; }
 .accordion-menu {  background-color:#fff; }
 .accordion-menu .tab {  cursor:pointer; position:relative;  }
 .accordion-menu .tab .tit { line-height:50px; text-align:left; padding:0 15px; border-radius:3px; border-bottom:1px solid #eee; }
-/* .accordion-menu .tab .tit:hover { background-color:#eee; transition:all .3s ease;} */
-.accordion-menu .tab .dep2 { background-color:#fff; }
-.accordion-menu .tab.active .dep2 { background-color:#f6f6f6; }
-.accordion-menu .tab .dep2 li { padding:0 15px; line-height:2.5; font-size:14px; color:#aaa;}
+.accordion-menu .tab .dep2 { background-color:#f6f6f6; }
+.accordion-menu .tab .dep2 li { padding:0 15px; line-height:2.5; font-size:14px; color:#888;}
 .accordion-menu .tab .icon-arrow { width:16px; position:absolute; top:17px; right:17px; transform:rotate(0deg); transition:all .6s ease; }
-/* .accordion-menu .tab.active .tit { border-color: #eee;} */
-.accordion-menu .tab.active .icon-arrow { transform:rotate(135deg); transition:all .6s ease; }
+.accordion-menu .tab.active .icon-arrow { transform:rotate(135deg); transition:all .6s ease; cursor:pointer;}
 </style>
