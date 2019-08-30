@@ -11,6 +11,7 @@
         </slide-up-down>
       </li>
     </ul>
+
   </div>
 </template>
 
@@ -62,6 +63,7 @@ export default {
     }
   },
 }
+
 </script>
 
 <style scoped>
@@ -70,7 +72,7 @@ ul { list-style-type: none; padding: 0; }
 li { margin:0; }
 a { color: #42b983; }
 
-.wrapper { width:500px; margin:0 auto; text-align:left; }
+.wrapper { width:500px; margin:60px auto; text-align:left; }
 .accordion-menu {  background-color:#fff; }
 .accordion-menu .tab {  cursor:pointer; position:relative;  }
 .accordion-menu .tab .tit { line-height:50px; text-align:left; padding:0 15px; border-radius:3px; border-bottom:1px solid #eee; }
