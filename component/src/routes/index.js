@@ -7,6 +7,7 @@ import index from '../components/Index.vue'
 import accordion from '../components/Accordion.vue'
 import scroll from '../components/Scroll.vue'
 import carousel from '../components/Carousel.vue'
+import carousel02 from '../components/Carousel02.vue'
 
 export default new Router({
   mode: 'history',
@@ -26,6 +27,10 @@ export default new Router({
     {
       path: '/carousel',
       component: carousel
+    },
+    {
+      path: '/carousel02',
+      component: carousel02
     },
   ],
 });
