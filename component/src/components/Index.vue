@@ -14,7 +14,8 @@ export default {
     return {
       links: [
         'accordion',
-        'scroll'
+        'scroll',
+        'carousel'
       ]
     }
   }
