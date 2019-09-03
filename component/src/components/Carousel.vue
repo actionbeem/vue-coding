@@ -9,7 +9,7 @@
     </section>
 
     <!-- direction -->
-    <!-- <section>
+    <section>
       <p class="title">Directions</p>
       <div class="directions clear row">
         <div class="col-sm">
@@ -25,7 +25,7 @@
           <carousel :data="data02" direction="down" :autoplay="false" :interval="1000"></carousel>
         </div>
       </div>
-    </section> -->
+    </section>
 
   </div>
 </template>
@@ -66,20 +66,7 @@ export default {
       }, [`Slide ${vm.$parent.direction}`]);
     },
   },
-  
-  mounted(){
-    console.log(this.$refs['basic'])
-  },
-  
-  // mounted(){
-  //   this.currentSlide = this.$refs['basic'].currentPage;
-  // },
 
-  // watch: {
-  //   currentSlide: function (value, old) {
-  //     console.log(value)
-  //   }
-  // },
 };
 </script>
 
