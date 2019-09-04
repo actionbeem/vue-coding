@@ -4,19 +4,25 @@
       <logo></logo>
     </div>
     <p class="title">login</p>
+    <p>{{ this.count }}aaa</p>
+    <p>{{ increase }}aaa</p>
   </section>
 </template>
 
 <script>
 import Logo from '@/components/Logo.vue';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   components: {
     Logo
   },
+  computed: {
+    ...mapState(['count']),
+    ...mapGetters(['increase'])
+  },
   mounted(){
-    $('.title').css({'color':'red','font-size':'14px'}).animate({ 'margin-left': '200px'})
-    console.log('success!!')
+    console.log(this.count)
   }
 }
 </script>

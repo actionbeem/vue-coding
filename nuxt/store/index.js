@@ -1,18 +1,17 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
+// Vue.use(Vuex)
 
-export const store = new Vuex.Store({
+const store = () => new Vuex.Store({
   state: {
-    testData: 111
+    count: 500
   },
-  mutations: {
-    UP_STEP(state) {
-      state.stepIndex += 1;
+  getters: {
+    increase(state){
+      return state.count + 5;
     },
-    DOWN_STEP(state) {
-      state.stepIndex -= 1;
-    }
   },
 })
+
+export default store;
