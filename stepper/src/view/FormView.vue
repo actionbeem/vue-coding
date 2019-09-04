@@ -46,7 +46,7 @@ export default {
     FormSelect: () => import('../components/FormSelect.vue'),
   },
   watch:{
-    stepIndex(val){
+    stepIndex(val, oldVal){
       let steps = this.$refs.steps;
       let beforeStep = this.beforeStep;
       steps.childNodes[val].classList.add('active');
