@@ -2,10 +2,8 @@
   <div>
     <p>about page</p>
     <ul>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
+      <li>aaa test
+      </li>
     </ul>
   </div>
 </template>
