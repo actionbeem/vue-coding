@@ -244,3 +244,15 @@ input,
 button {
   outline-width: 0;
 }
+
+
+.page-enter-active,
+.page-leave-active {
+  transition: all .3s;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+  margin-top: 50px;
+}
