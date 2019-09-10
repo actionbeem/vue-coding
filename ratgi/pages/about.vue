@@ -1,7 +1,7 @@
 <template>
-  <section class="sub-page">
-    <div class="wrapper">
-      <p style="padding-top:120px;">about-page</p>
+  <section class="detail-wrap">
+    <div class="content">
+
     </div>
   </section>
 </template>
@@ -18,6 +18,6 @@ export default {
 </script>
 
 <style scoped>
-.sub-page { height:100vh; background-color:#f6f6f6; }
-.sub-page .wrapper { height:calc(100vh - 50px); margin:0 50px; background-color:#fff; position:relative; box-shadow:0 5px 35px rgba(0,0,0,0.05); }
+.detail-wrap { width:1000px; height:calc(100vh - 50px); overflow:hidden; margin:0 auto; }
+.detail-wrap .content { height:1000px; background-color:#333; border-top:10px solid red; border-bottom:10px solid blue;}
 </style>

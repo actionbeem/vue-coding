@@ -1,14 +1,17 @@
 <template>
-  <header class="header">
-    <nuxt-link to="/">
-      <img class="logo" src="../assets/images/logo.png" alt="logo 이미지">
-    </nuxt-link>
-    <ul class="nav">
-      <li v-for="nav in navList" :key="nav" :class="{ active: nav === navCurrent }">
-        <nuxt-link :to="nav">{{ nav }}</nuxt-link>
-      </li>
-    </ul>
-  </header>
+  <div>
+    <header class="header">
+      <nuxt-link to="/">
+        <img class="logo" src="../assets/images/logo.png" alt="logo 이미지">
+      </nuxt-link>
+      <ul class="nav">
+        <li v-for="nav in navList" :key="nav" :class="{ active: nav === navCurrent }">
+          <nuxt-link :to="nav">{{ nav }}</nuxt-link>
+        </li>
+      </ul>
+    </header>
+  </div>
+
 </template>
 
 <script>
