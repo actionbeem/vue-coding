@@ -1,8 +1,19 @@
 <template>
   <div>
+    <header-bar></header-bar>
     <nuxt/>
   </div>
 </template>
+
+<script>
+import headerBar from '../components/HeaderBar.vue'
+
+export default {
+  components: {
+    headerBar,
+  },
+}
+</script>
 
 <style>
 html {
