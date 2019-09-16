@@ -20,6 +20,6 @@ export default {
 
 <style>
 .bg-frame { position:fixed; width:100vw; height:100vh; top:0; left:0; z-index:-1; background-color:#f6f6f6; }
-.bg-frame .wrapper { height:calc(100vh - 50px); margin:0 50px; background-color:#fff; position:relative; box-shadow:0 5px 35px rgba(0,0,0,0.05); }
+.bg-frame .wrapper { height:calc(100vh - 50px); margin:0 50px; background-color:#fff; position:relative;  }
 </style>
 

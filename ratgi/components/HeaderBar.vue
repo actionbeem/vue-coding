@@ -2,10 +2,11 @@
   <div>
     <header class="header">
       <nuxt-link to="/">
-        <img class="logo" src="../assets/images/logo.png" alt="logo 이미지">
+        <img class="logo" src="../assets/images/logo.png" alt="logo 이미지" @click="initNav">
       </nuxt-link>
+
       <ul class="nav">
-        <li v-for="nav in navList" :key="nav" :class="{ active: nav === navCurrent }">
+        <li v-for="nav in navList" :key="nav" :class="{ active: nav === navCurrent }" @click="selectNav(nav)">
           <nuxt-link :to="nav">{{ nav }}</nuxt-link>
         </li>
       </ul>
@@ -19,11 +20,16 @@ export default {
   data(){
     return {
       navList: ['about','work','blog'],
-      navCurrent: this.$route.name
+      navCurrent: null,
     }
   },
-  mounted(){
-    console.log('heya:', this.navCurrent)
+  methods: {
+    initNav(){
+      this.navCurrent = null;
+    },
+    selectNav(nav){
+      this.navCurrent = nav;
+    }
   }
 }
 </script>
