@@ -12,19 +12,19 @@
       <ul class="list clear">
         <transition-group name="fade" mode="out-in">
           <li v-for="work in filterList" :key="work.id" :class="work.category">
-            <nuxt-link to="">
+            <nuxt-link :to="`/work/${work.id}`">
               <div class="thumb">
-                <img :src="require('../assets/images/' + work.src + '.jpg')" alt="">
+                <img :src="require('../../assets/images/' + work.src + '.jpg')" alt="">
               </div>
               <div>
                 <p class="tit">{{ work.title }}</p>
                 <p class="sub">{{ work.subTitle }}</p>
               </div>
             </nuxt-link>
-            <!-- <p>{{ work.title }}</p> -->
           </li>
         </transition-group>
       </ul>
+      <nuxt-child/>
     </div>
   </section>
 
@@ -50,8 +50,8 @@ export default {
         { id:10, title:'SyncCommerce', subTitle:'Dashboard Design', src:'thumb_sync', category:'Design', description:'this item is.. 04' },
         { id:11, title:'29cm', subTitle:'UI/UX Concept Design', src:'thumb_29cm', category:'Design', description:'this item is.. 01' },
         { id:12, title:'Conhom', subTitle:'UI/UX Concept Design', src:'thumb_conhom', category:'Design', description:'this item is.. 02' },
-        { id:9, title:'Volfgang Laib', subTitle:'Web Design', src:'thumb_volfgang', category:'Design', description:'this item is.. 03' },
-        { id:10, title:'SyncCommerce', subTitle:'Dashboard Design', src:'thumb_sync', category:'Design', description:'this item is.. 04' },
+        { id:9, title:'Volfgang Laib', subTitle:'Web Design', src:'thumb_volfgang', category:'Publish', description:'this item is.. 03' },
+        { id:10, title:'SyncCommerce', subTitle:'Dashboard Design', src:'thumb_sync', category:'Publish', description:'this item is.. 04' },
 
       ]
     }
@@ -79,7 +79,7 @@ export default {
 .work .list .thumb img { width:100%; transform:scale(1); transition:all .3s ease;}
 .work .list .thumb:hover img { transform:scale(1.1); transition:all .3s ease; }
 .work .list .tit { font-size:18px; color:#666; margin-bottom:3px; }
-.work .list .sub { font-size:13px; color:#aaa; }
+.work .list .sub { font-size:12px; color:#ccc; }
 .filter { margin-bottom:25px; }
 .filter li { display:inline-block; margin-right:7px; }
 .filter li button { font-size:15px; color:#333; padding:6px 18px; border-radius:25px;}
