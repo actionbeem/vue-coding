@@ -7,7 +7,7 @@
 
       <ul class="nav">
         <li v-for="nav in navList" :key="nav" :class="{ active: nav === navCurrent }" @click="selectNav(nav)">
-          <nuxt-link :to="nav">{{ nav }}</nuxt-link>
+          <nuxt-link :to="`/${nav}`">{{ nav }}</nuxt-link>
         </li>
       </ul>
     </header>

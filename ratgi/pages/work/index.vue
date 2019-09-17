@@ -31,32 +31,18 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data(){
     return {
       categories: ['Design','Publish'],
       selectedCategory: 'Design',
-      workList: [
-        { id:1, title:'29cm', subTitle:'UI/UX Concept Design', src:'thumb_29cm', category:'Design', description:'this item is.. 01' },
-        { id:2, title:'Conhom', subTitle:'UI/UX Concept Design', src:'thumb_conhom', category:'Design', description:'this item is.. 02' },
-        { id:3, title:'Megabox', subTitle:'UI/UX Concept Design', src:'thumb_megabox', category:'Design', description:'this item is.. 03' },
-        { id:4, title:'SyncCommerce', subTitle:'Dashboard Design', src:'thumb_sync', category:'Design', description:'this item is.. 04' },
-        { id:5, title:'Hyungji', subTitle:'Dashboard Design', src:'thumb_hyungji', category:'Publish', description:'this item is.. 01' },
-        { id:6, title:'Guess', subTitle:'Dashboard Design', src:'thumb_guess', category:'Publish', description:'this item is.. 02' },
-        { id:7, title:'Innoio', subTitle:'Dashboard Design', src:'thumb_innoio', category:'Publish', description:'this item is.. 03' },
-        { id:8, title:'Volfgang Laib', subTitle:'Dashboard Design', src:'thumb_volfgang', category:'Publish', description:'this item is.. 04' },
-
-        { id:9, title:'Volfgang Laib', subTitle:'Web Design', src:'thumb_volfgang', category:'Design', description:'this item is.. 03' },
-        { id:10, title:'SyncCommerce', subTitle:'Dashboard Design', src:'thumb_sync', category:'Design', description:'this item is.. 04' },
-        { id:11, title:'29cm', subTitle:'UI/UX Concept Design', src:'thumb_29cm', category:'Design', description:'this item is.. 01' },
-        { id:12, title:'Conhom', subTitle:'UI/UX Concept Design', src:'thumb_conhom', category:'Design', description:'this item is.. 02' },
-        { id:9, title:'Volfgang Laib', subTitle:'Web Design', src:'thumb_volfgang', category:'Publish', description:'this item is.. 03' },
-        { id:10, title:'SyncCommerce', subTitle:'Dashboard Design', src:'thumb_sync', category:'Publish', description:'this item is.. 04' },
-
-      ]
     }
   },
   computed: {
+    ...mapState(['workList']),
+
     filterList(){
       return this.workList.filter(val => {
         return val.category === this.selectedCategory;
