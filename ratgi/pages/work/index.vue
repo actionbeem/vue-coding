@@ -2,7 +2,7 @@
   <section>
     <div class="work">
       <div class="inner-wrap">
-        <h1 class="pg-tit">Work</h1>
+        <h1 class="pg-tit mb-30">Work</h1>
         <ul class="filter">
           <li v-for="ctgr in categories" :key="ctgr" :class="{ active : ctgr === selectedCategory}">
             <button @click="fatchCategory(ctgr)">{{ ctgr }}</button>
@@ -12,15 +12,29 @@
       <ul class="list clear">
         <transition-group name="fade" mode="out-in">
           <li v-for="work in filterList" :key="work.id" :class="work.category">
-            <nuxt-link :to="`/work/${work.id}`">
-              <div class="thumb">
-                <img :src="require('../../assets/images/' + work.src + '.jpg')" alt="">
-              </div>
-              <div>
-                <p class="tit">{{ work.title }}</p>
-                <p class="sub">{{ work.subTitle }}</p>
-              </div>
-            </nuxt-link>
+            <template v-if="work.externalLink">
+              <a :href="work.externalLink" target="blank">
+                <div class="thumb">
+                  <img :src="require('../../assets/images/' + work.thumb + '.jpg')" alt="">
+                </div>
+                <div>
+                  <p class="tit">{{ work.title }}</p>
+                  <p class="sub">{{ work.subTitle }}</p>
+                </div>
+              </a>
+            </template>
+            <template v-else>
+              <nuxt-link :to="`/work/${work.id}`">
+                <div class="thumb">
+                  <img :src="require('../../assets/images/' + work.thumb + '.jpg')" alt="">
+                </div>
+                <div>
+                  <p class="tit">{{ work.title }}</p>
+                  <p class="sub">{{ work.subTitle }}</p>
+                </div>
+              </nuxt-link>
+            </template>
+
           </li>
         </transition-group>
       </ul>
@@ -44,8 +58,8 @@ export default {
     ...mapState(['workList']),
 
     filterList(){
-      return this.workList.filter(val => {
-        return val.category === this.selectedCategory;
+      return this.workList.filter(work => {
+        return work.category === this.selectedCategory;
       })
     },
   },
