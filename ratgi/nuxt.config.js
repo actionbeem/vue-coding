@@ -37,7 +37,17 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
-  }
+      if (!isDev) {
+        config.output.publicPath = './_nuxt/'
+      }
+    },
+    // assetsPublicPath: './',
+    // publicPath: 'https://actionbeem.github.io/ratgi/'
+    // assetsSubDirectory: './_nuxt/'
+    // publicPath: '/_nuxt/'
+  },
+  // router: {
+  //   base: 'https://actionbeem.github.io/ratgi/'
+  // }
 }
 

@@ -7,7 +7,8 @@
 
       <ul class="nav">
         <li v-for="nav in navList" :key="nav" :class="{ active: nav === navCurrent }" @click="selectNav(nav)">
-          <nuxt-link :to="`/${nav}`">{{ nav }}</nuxt-link>
+          <a v-if="nav === 'blog'" href="https://blog-d24e2.firebaseapp.com/" target="blank">{{ nav }}</a>
+          <nuxt-link v-else :to="`/${nav}`">{{ nav }}</nuxt-link>
         </li>
       </ul>
     </header>

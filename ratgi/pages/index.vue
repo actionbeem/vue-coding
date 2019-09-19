@@ -4,7 +4,7 @@
       <ul class="sns-icon">
         <li v-for="(icon, index) in snsIcons" :key="index">
           <a :href="icon.link" target="blank">
-            <img :src="require(`@/assets/images/${icon.src}`)" :alt="icon.art">
+            <img :src="require(`~/assets/images/${icon.src}`)" :alt="icon.art">
           </a>
         </li>
       </ul>

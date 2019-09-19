@@ -23,6 +23,7 @@
                 </div>
               </a>
             </template>
+
             <template v-else>
               <nuxt-link :to="`/work/${work.id}`">
                 <div class="thumb">
@@ -34,7 +35,6 @@
                 </div>
               </nuxt-link>
             </template>
-
           </li>
         </transition-group>
       </ul>

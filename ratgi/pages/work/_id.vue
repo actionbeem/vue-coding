@@ -35,6 +35,11 @@ export default {
       workID: this.$route.params.id
     }
   },
+  watch: {
+    workID(val){
+      console.log(val)
+    }
+  }
 }
 </script>
 
