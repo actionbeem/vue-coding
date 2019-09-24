@@ -9,28 +9,17 @@
         한 가지 분야만 고집하기 보다는 폭 넓은 경험과 시야를 가진 전문가이고 싶습니다. <br>
         관심 가져 주셔서 감사합니다.</p>
         <div class="skill-wrap clear">
-          <div class="half mb-30 clear" v-for="skill in skills" :key="skill.id">
+          <div class="half mb-30 clear" v-for="skill in skills" :key="skill.name">
             <div class="logo">
-              <img src="../assets/images/logo_css3.png" alt="로고">
+              <img :src="require('../assets/images/logo_' + skill.logo + '.png')" alt="로고">
             </div>
             <div class="graph">
-              <p class="label">{{ skill.label }}</p>
+              <p class="label">{{ skill.name }}</p>
               <div class="gage">
-                <p class="bar" :class="skill.id" style="background-color:#1d61ac;"></p>
+                <p class="bar" :class="skill.name" :style="`background-color:${skill.color}`"></p>
               </div>
             </div>
           </div>
-          <!-- <div class="half clear">
-            <div class="logo">
-              <img src="../assets/images/logo_js.png" alt="로고">
-            </div>
-            <div class="graph">
-              <p class="label">Javascript</p>
-              <div class="gage">
-                <p class="bar" ref="bar" style="background-color:#f2dc1c;"></p>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
@@ -44,23 +33,24 @@ export default {
   data(){
     return {
       skills: [
-        {id: 'bar01', width: '60%', label: 'HTML 5' },
-        {id: 'bar02', width: '80%', label: 'Javascript' },
-        {id: 'bar03', width: '50%', label: 'Photoshop' },
-        {id: 'bar04', width: '90%', label: 'CSS 3' },
+        { name: 'VueJs', width: '70%', logo:'vue', color: '#41b883', },
+        { name: 'Javascript', width: '60%', logo:'javascript', color: '#f2dc1c', },
+        { name: 'JQuery', width: '90%', logo:'jquery', color: '#0868ac', },
+        { name: 'Nuxt', width: '30%', logo:'nuxt', color: '#00ac5d', },
+        { name: 'HTML', width: '90%', logo:'html5', color: '#f46b2a', },
+        { name: 'CSS', width: '90%', logo:'css3', color: '#337bc5', },        
+        { name: 'Photoshop', width: '90%', logo:'photoshop', color: '#00c7ff', },
+        { name: 'Illustrator', width: '80%', logo:'illustrator', color: '#ff7d00', },        
+        { name: 'TypeScript', width: '20%', logo:'typescript', color: '#007acc', },
+        { name: 'NodeJs', width: '20%', logo:'node', color: '#41873f', },
       ],
     }
   },
   mounted(){
-    console.log(document.querySelector('.bar01'))
-    document.querySelector('.bar01').style.width = '80%';
-    document.querySelector('.bar01').style.transition = 'width 1.5s ease';
-    document.querySelector('.bar02').style.width = '50%';
-    document.querySelector('.bar02').style.transition = 'width 1.5s ease';
-    document.querySelector('.bar03').style.width = '60%';
-    document.querySelector('.bar03').style.transition = 'width 1.5s ease';
-    document.querySelector('.bar04').style.width = '90%';
-    document.querySelector('.bar04').style.transition = 'width 1.5s ease';
+    this.skills.forEach(skill => {
+      document.querySelector(`.${skill.name}`).style.width = `${skill.width}`;
+      document.querySelector(`.${skill.name}`).style.transition = 'width 1.5s ease';     
+    })
   }
 }
 </script>
@@ -70,7 +60,7 @@ export default {
 .detail-wrap .inner { width:900px; height:1000px; margin:0 auto; }
 .detail-wrap .desc { font-size:18px; line-height:1.8; color:#999; font-weight:normal;}
 
-.half { width:50%; float:left; padding-right: 40px; box-sizing:border-box; }
+.half { width:50%; float:left; padding-right: 50px; box-sizing:border-box; }
 .skill-wrap { margin-top:50px;}
 .skill-wrap .logo { width:20%; float:left; }
 .skill-wrap .logo > img { width:60px; border-radius:8px; box-shadow:0 10px 15px rgba(0,0,0,0.1);}
