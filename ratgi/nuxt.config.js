@@ -46,8 +46,8 @@ module.exports = {
     // assetsSubDirectory: './_nuxt/'
     // publicPath: '/_nuxt/'
   },
-  router: {
-    base: '/test/'
-  }
+  // router: {
+  //   base: '/test/'
+  // }
 }
 

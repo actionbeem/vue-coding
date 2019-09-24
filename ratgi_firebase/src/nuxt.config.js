@@ -20,6 +20,9 @@ module.exports = {
   /*
   ** Build configuration
   */
+  css: [
+    '~/assets/css/main.css'
+  ],
   build: {
     /*
     ** Run ESLint on save
