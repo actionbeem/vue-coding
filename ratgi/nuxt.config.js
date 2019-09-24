@@ -17,7 +17,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#3B8070' , height: '6px' },
   /*
   ** Build configuration
   */
@@ -37,17 +37,17 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-      if (!isDev) {
-        config.output.publicPath = './_nuxt/'
-      }
+      // if (!isDev) {
+      //   config.output.publicPath = './_nuxt/'
+      // }
     },
     // assetsPublicPath: './',
     // publicPath: 'https://actionbeem.github.io/ratgi/'
     // assetsSubDirectory: './_nuxt/'
     // publicPath: '/_nuxt/'
   },
-  // router: {
-  //   base: 'https://actionbeem.github.io/ratgi/'
-  // }
+  router: {
+    base: '/test/'
+  }
 }
 
