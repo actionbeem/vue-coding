@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header-bar></header-bar>
+    <!-- <header-bar></header-bar> -->
     <div class="bg-frame">
       <div class="wrapper"></div>
     </div>
@@ -13,7 +13,7 @@ import headerBar from '../components/HeaderBar.vue'
 
 export default {
   components: {
-    headerBar,
+    // headerBar,
   }
 }
 </script>
