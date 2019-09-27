@@ -71,18 +71,20 @@ export default {
               .then(snapshot => {
                 console.log('메일 :', snapshot.val().email)
                 this.email = snapshot.val().email;
+                return this; 
               })
+              .then(vm => {
+                firebase.database().ref(`posts/`).push({
+                  authorID: vm.currentUserUid,
+                  authorEmail: vm.email,
+                  title,
+                  category,
+                  coverImg,
+                  description 
+                });
 
-            firebase.database().ref(`posts/`).push({
-              authorID: this.currentUserUid,
-              authorEmail: this.email,
-              title,
-              category,
-              coverImg,
-              description 
-            });
-
-            this.$router.push('/')
+                vm.$router.push('/')
+              })
           } else {
             alert('내용을 입력해주세요.')
           }
@@ -95,7 +97,7 @@ export default {
     },
     editPost(){
       const title = this.title;
-      const coverImg = this.coverImg;
+      const coverImg = this.coverImg ? this.coverImg : "";
       const category = this.category;
       const description = this.editor.getContents();
       firebase.database().ref(`posts/${this.postId}`).update({
