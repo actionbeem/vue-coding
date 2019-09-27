@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="title">Blog</h1>
     <post-list></post-list>
     <router-link class="btn-write" :to="{ name:'write' , params: { isLogin: currentUserUid } }">write</router-link>
   </div>
@@ -25,5 +26,6 @@ export default {
 
 
 <style scoped>
+h1.title { font-size:50px; font-weight:normal; margin:100px auto 50px; }
 .btn-write { position:fixed; right:30px; bottom:30px; width:50px; height:50px; text-align:center; line-height:50px; border-radius:25px; background-color:#333; color:#fff; z-index:10; }
 </style>

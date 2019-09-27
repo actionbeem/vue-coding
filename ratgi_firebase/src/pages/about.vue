@@ -67,7 +67,7 @@ export default {
         { name: 'HTML', width: '90%', logo:'html5', color: '#f46b2a', },
         { name: 'CSS', width: '90%', logo:'css3', color: '#337bc5', },        
         { name: 'Photoshop', width: '90%', logo:'photoshop', color: '#00c7ff', },
-        { name: 'Illustrator', width: '85%', logo:'illustrator', color: '#ff7d00', },        
+        { name: 'Illustrator', width: '80%', logo:'illustrator', color: '#ff7d00', },        
         { name: 'TypeScript', width: '20%', logo:'typescript', color: '#007acc', },
         { name: 'NodeJs', width: '20%', logo:'node', color: '#41873f', },
       ],

@@ -66,7 +66,7 @@ export default {
 .btn-ctgr li { display:inline-block; padding:8px 24px; border:1px solid transparent; border-radius:25px; margin:0 8px; cursor:pointer; }
 .btn-ctgr li.active { background-color:#222; color:#fff; }
 .btn-ctgr li:hover { border-color:#222; transition: all .5s ease; }
-.list-wrap { width:1200px; margin:100px auto; padding:0 10px; }
+.list-wrap { width:1200px; margin:0 auto 100px; padding:0 10px; }
 .post-list { padding-left:0; box-sizing:border-box; }
 .post-thumb {  width:25%; box-sizing:border-box; padding:10px; }
 .post-thumb .inner { background-color:#ddd; border-radius:5px;  box-sizing:border-box; text-align:left; overflow:hidden;}
