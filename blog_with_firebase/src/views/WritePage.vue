@@ -11,8 +11,8 @@
     <div class="ctgr-wrap">
       <select name="category" id="post-ctgr" v-model="category">
         <option disabled value="">select category</option>
-        <option value="Think">Think</option>
         <option value="Dev">Dev</option>
+        <option value="Publish">Publish</option>
         <option value="Design">Design</option>
       </select>
       <i class="fas fa-chevron-down"></i>
@@ -136,9 +136,6 @@ export default {
           this.description = this.editor.setContents(post.description);
         })
     }
-
-    let test = $('.test')
-    console.log('제이쿼리 : ', test)
   }
 }
 </script>
