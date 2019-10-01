@@ -1,9 +1,7 @@
 <template>
   <div class="detail-view">
     <div class="clear">
-      <router-link class="btn-back" to="/">
-        <i class="fas fa-arrow-left"></i>
-      </router-link>
+      <i class="fas fa-arrow-left" @click="goBack"></i>
     </div>
     <div class="top">
       <h1 class="title">{{ post.title }}</h1>
@@ -49,6 +47,9 @@ export default {
     deletePost(){
       firebase.database().ref(`posts/${this.postId}`).remove();
       this.$router.push('/')
+    },
+    goBack(){
+      this.$router.go(-1)
     }
   },
   created(){

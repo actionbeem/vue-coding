@@ -24,7 +24,7 @@
 import { mapState } from 'vuex'
 import Vue from 'vue'
 import {VueMasonryPlugin} from 'vue-masonry';
-import $ from 'jquery'
+// import $ from 'jquery'
 
 Vue.use(VueMasonryPlugin)
 
@@ -52,8 +52,14 @@ export default {
   },
   methods: {
     fatchCategory(category){
-      this.selectedCategory = category; 
+      this.selectedCategory = category;
+      this.itemAlign();
     },
+    itemAlign(){
+      setTimeout(()=>{
+        this.$redrawVueMasonry();
+      },200)
+    }
   },
   created(){
     this.$store.dispatch('fetchList')
