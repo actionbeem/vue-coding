@@ -2,11 +2,11 @@
   <div class="detail">
     <div class="inner" :class="{ vertical : selectedWork.imgVertical }">
       <h1 class="pg-tit">{{ selectedWork.title }}</h1>
-      <p class="sub mb-30">{{ selectedWork.subTitle }}</p>
-      <p class="desc mb-30">{{ selectedWork.description }}</p>
+      <p class="sub mt-5 mb-30">{{ selectedWork.subTitle }}</p>
       <div class="img-area">
         <img v-for="imgs in selectedWork.detailImg" :key="imgs" :src="require('../../assets/images/detail/' + imgs + '.jpg')">
       </div>
+      <p class="desc">{{ selectedWork.description }}</p>
     </div>
 
     <div class="bottom-cover"></div>
@@ -53,9 +53,9 @@ export default {
 
 <style scoped>
 .detail .inner { width:960px; margin:0 auto; padding-top:90px; }
-.detail .inner .sub { font-size:18px; color:#bbb; }
-.detail .inner .desc { font-size:17px; color:#888; }
-.detail .inner .img-area { margin-top:50px; }
-.detail .inner .img-area img { width:100%; margin-bottom:110px; }
 .detail .inner.vertical { width:700px; margin:0 auto; padding-top:90px; }
+.detail .inner .sub { font-size:18px; color:#bbb; }
+.detail .inner .img-area { margin-top:50px; }
+.detail .inner .img-area img { width:100%; margin-bottom:70px; }
+.detail .inner .desc { font-size:17px; line-height:1.6; color:#888; margin-bottom:110px; word-break: keep-all; }
 </style>
