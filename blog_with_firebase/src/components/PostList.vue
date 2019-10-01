@@ -66,13 +66,13 @@ export default {
 .btn-ctgr li { display:inline-block; padding:8px 24px; border:1px solid transparent; border-radius:25px; margin:0 8px; cursor:pointer; }
 .btn-ctgr li.active { background-color:#222; color:#fff; }
 .btn-ctgr li:hover { border-color:#222; transition: all .5s ease; }
-.list-wrap { width:1200px; margin:0 auto 100px; padding:0 10px; }
+.list-wrap { width:1200px; margin:0 auto; padding:0 10px 100px; }
 .post-list { padding-left:0; box-sizing:border-box; }
-.post-thumb {  width:25%; box-sizing:border-box; padding:10px; }
-.post-thumb .inner { background-color:#ddd; border-radius:5px;  box-sizing:border-box; text-align:left; overflow:hidden;}
+.post-thumb {  width:25%; box-sizing:border-box; padding:10px;  }
+.post-thumb .inner { background-color:#f6f6f6; border-radius:5px;  box-sizing:border-box; text-align:left; overflow:hidden; box-shadow:0 10px 15px rgba(0,0,0,0.08);}
 .post-thumb .inner .summary { padding:15px; }
-.post-thumb .inner .ctgr { font-size:15px; margin-bottom:7px; color:#666;}
-.post-thumb .inner h2 { margin-bottom:5px; font-size:21px; }
+.post-thumb .inner .ctgr { font-size:13px;  color:#999;}
+.post-thumb .inner h2 { font-size:21px; }
 .post-thumb .img-cover { width:100%; vertical-align:top; }
 .post-list li:hover { transform:scale(1.05); transition:all .2s ease; z-index:1000; }
 </style>

@@ -19,7 +19,7 @@ export default {
 
 <style>
 * { padding:0; margin:0; }
-body { background-color:#f6f6f6; line-height:1.5; }
+body { line-height:1.5; }
 #app {
   font-family: 'Malgun Gothic', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
