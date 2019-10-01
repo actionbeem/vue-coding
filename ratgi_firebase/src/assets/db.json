@@ -1,19 +1,22 @@
 {
   "items" : [
-    { "id": 1, "title": "29cm", "subTitle": "UI/UX Concept Design", "thumb": "thumb_29cm", "detailImg": ["29cm_00", "29cm_01", "29cm_02", "29cm_03", "29cm_04"], "category": "Design", "description": "this item is.. 01" },
-    { "id": 2, "title": "Conhom", "subTitle": "UI/UX Concept Design", "thumb": "thumb_conhom", "detailImg": ["conhom_00","conhom_01","conhom_02"], "category": "Design", "description": "this item is.. 02" },
-    { "id":3, "title": "Megabox", "subTitle": "UI/UX Concept Design", "thumb": "thumb_megabox", "category": "Design", "description": "this item is.. 03" },
-    { "id":4, "title": "SyncCommerce", "subTitle": "Dashboard Design", "thumb": "thumb_sync", "category": "Design", "description": "this item is.. 04" },
-    { "id":5, "title": "Hyungji", "subTitle": "Dashboard Design", "thumb": "thumb_hyungji", "externalLink": "https://www.naver.com", "category": "Publish", "description": "this item is.. 01" },
-    { "id":6, "title": "Guess", "subTitle": "Dashboard Design", "thumb": "thumb_guess", "category": "Publish", "description": "this item is.. 02" },
-    { "id":7, "title": "Innoio", "subTitle": "Dashboard Design", "thumb": "thumb_innoio", "category": "Publish", "description": "this item is.. 03" },
-    { "id":8, "title": "Volfgang Laib", "subTitle": "Dashboard Design", "thumb": "thumb_volfgang", "category": "Publish", "description": "this item is.. 04" },
+    { "id": 1, "title": "29cm", "subTitle": "UI/UX Concept Design", "thumb": "thumb_29cm", "detailImg": ["29cm_00", "29cm_01", "29cm_02", "29cm_03", "29cm_04"], "category": "Design", "description": "" },
+    { "id": 2, "title": "Conhom", "subTitle": "UI/UX Concept Design", "thumb": "thumb_conhom", "detailImg": ["conhom_00","conhom_01","conhom_02"], "category": "Design", "description": "" },
+    { "id":3, "title": "Megabox", "subTitle": "UI/UX Concept Design", "thumb": "thumb_megabox", "detailImg": ["mega_01","mega_02","mega_03","mega_04"],"category": "Design", "description": "" },
+    { "id":4, "title": "SyncCommerce", "subTitle": "Dashboard Design", "thumb": "thumb_sync", "externalLink": "http://clab-publish.ajashop.co.kr/sync_renewal/info.html", "category": "Design", "description": "" },
+    { "id":5, "title": "Wolfgang Laib", "subTitle": "Web Design", "thumb": "thumb_wolfgang", "externalLink": "http://kjh8502.dothome.co.kr/wolfgang/index.html", "category": "Design", "description": "" },
+    { "id":6, "title": "BeautiFruit", "subTitle": "Web Design", "thumb": "thumb_beautifruit", "externalLink": "http://kjh8502.dothome.co.kr/beautifruit/index.html", "category": "Design", "description": "" },
+    { "id":7, "title": "Less", "subTitle": "Dashboard Design", "thumb": "thumb_sync", "externalLink": "http://clab-publish.ajashop.co.kr/sync_renewal/info.html", "category": "Design", "description": "" },
+    { "id":8, "title": "mrkoon", "subTitle": "Dashboard Design", "thumb": "thumb_sync", "externalLink": "http://clab-publish.ajashop.co.kr/sync_renewal/info.html", "category": "Design", "description": "" },
 
-    { "id":9, "title":"Volfgang Laib", "subTitle": "Web Design", "thumb": "thumb_volfgang", "category": "Design", "description": "this item is.. 03" },
-    { "id":10," title":"SyncCommerce", "subTitle": "Dashboard Design", "thumb": "thumb_sync", "category": "Design", "description": "this item is.. 04" },
-    { "id":11," title":"29cm", "subTitle": "UI/UX Concept Design", "thumb": "thumb_29cm", "category": "Design", "description": "this item is.. 01" },
-    { "id":12," title":"Conhom", "subTitle": "UI/UX Concept Design", "thumb": "thumb_conhom", "category": "Design", "description": "this item is.. 02" },
-    { "id":9, "title":"Volfgang Laib", "subTitle": "Web Design", "thumb": "thumb_volfgang", "category": "Publish", "description": "this item is.. 03" },
-    { "id":10," title":"SyncCommerce", "subTitle": "Dashboard Design", "thumb": "thumb_sync", "category": "Publish", "description": "this item is.. 04" }
+    { "id":9, "title": "Hyungji", "subTitle": "패션그룹형지의 본사 공식 직영 쇼핑몰 - 형지몰", "thumb": "thumb_hyungji", "externalLink": "https://hyungjimall.com/", "category": "Publish", "description": "" },
+    { "id":10, "title": "Guess", "subTitle": "게스코리아 온라인 공식 스토어", "thumb": "thumb_guess", "externalLink": "https://www.guesskorea.com/main/main.php", "category": "Publish", "description": "" },
+    { "id":11, "title": "Shinwon Mall", "subTitle": "신원 공식 패션몰", "thumb": "thumb_shinwon", "externalLink": "http://www.shinwonmall.com/index.htm?", "category": "Publish", "description": "" },
+    { "id":12, "title": "Benetton Mall", "subTitle": "베네통 공식 온라인", "thumb": "thumb_benetton", "externalLink": "http://www.benettonmall.com/", "category": "Publish", "description": "" },
+    { "id":13, "title": "AWK Mall", "subTitle": "주니어, 키즈 의류 편집샵", "thumb": "thumb_airwalk", "externalLink": "http://www.awkmall.com/main/index.php", "category": "Publish", "description": "" },
+    { "id":14, "title": "Innoio", "subTitle": "혁신적인 이노아이오 프로젝터 공식사이트", "thumb": "thumb_innoio", "externalLink": "http://innoio.com/ko/", "category": "Publish", "description": "" },
+    { "id":15, "title": "Harim", "subTitle": "닭고기 전문업체 하림 온라인 스토어", "thumb": "thumb_harim", "externalLink": "http://www.harim.com/main.hr", "category": "Publish", "description": "" },
+    { "id":16, "title": "Sisley Mall", "subTitle": "시슬리 공식 온라인 스토어", "thumb": "thumb_sisley", "externalLink": "http://www.sisleymall.com/", "category": "Publish", "description": "" }
+
   ]
 }
