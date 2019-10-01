@@ -16,7 +16,17 @@
     { "id":13, "title": "AWK Mall", "subTitle": "주니어, 키즈 의류 편집샵", "thumb": "thumb_airwalk", "externalLink": "http://www.awkmall.com/main/index.php", "category": "Publish", "description": "" },
     { "id":14, "title": "Innoio", "subTitle": "혁신적인 이노아이오 프로젝터 공식사이트", "thumb": "thumb_innoio", "externalLink": "http://innoio.com/ko/", "category": "Publish", "description": "" },
     { "id":15, "title": "Harim", "subTitle": "닭고기 전문업체 하림 온라인 스토어", "thumb": "thumb_harim", "externalLink": "http://www.harim.com/main.hr", "category": "Publish", "description": "" },
-    { "id":16, "title": "Sisley Mall", "subTitle": "시슬리 공식 온라인 스토어", "thumb": "thumb_sisley", "externalLink": "http://www.sisleymall.com/", "category": "Publish", "description": "" }
+    { "id":16, "title": "Sisley Mall", "subTitle": "시슬리 공식 온라인 스토어", "thumb": "thumb_sisley", "externalLink": "http://www.sisleymall.com/", "category": "Publish", "description": "" },
+
+    { "id":17, "title": "Sketchers", "subTitle": "부산국제광고제 - 파이널리스트", "thumb": "thumb_29cm", "detailImg": ["idea_01"], "category": "Idea", "description": "", "imgVertical": true },
+    { "id":18, "title": "Durex", "subTitle": "부산국제광고제 - 파이널리스트", "thumb": "thumb_29cm", "detailImg": ["idea_02"], "category": "Idea", "description": "" },
+    { "id":19, "title": "Koica", "subTitle": "부산국제광고제 - 파이널리스트", "thumb": "thumb_29cm", "detailImg": ["idea_03"], "category": "Idea", "description": "",
+    "imgVertical": true },
+    { "id":20, "title": "Kumon", "subTitle": "부산국제광고제 - 파이널리스트", "thumb": "thumb_29cm", "detailImg": ["idea_04"], "category": "Idea", "description": "","imgVertical": true },
+    { "id":21, "title": "Hotsix", "subTitle": "부산국제광고제 - 파이널리스트", "thumb": "thumb_29cm", "detailImg": ["idea_05"], "category": "Idea", "description": "" },
+    { "id":22, "title": "Red Cross", "subTitle": "부산국제광고제 - 파이널리스트", "thumb": "thumb_29cm", "detailImg": ["idea_06"], "category": "Idea", "description": "", "imgVertical": true },
+    { "id":23, "title": "Koica", "subTitle": "부산국제광고제 - 파이널리스트", "thumb": "thumb_29cm", "detailImg": ["idea_07"], "category": "Idea", "description": "" },
+    { "id":24, "title": "Oreo", "subTitle": "부산국제광고제 - 파이널리스트", "thumb": "thumb_29cm", "detailImg": ["idea_08"], "category": "Idea", "description": "" }
 
   ]
 }

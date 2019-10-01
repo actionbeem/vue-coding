@@ -1,10 +1,12 @@
 <template>
   <div class="detail">
-    <h1 class="pg-tit">{{ selectedWork.title }}</h1>
-    <p class="sub mb-30">{{ selectedWork.subTitle }}</p>
-    <p class="desc mb-30">{{ selectedWork.description }}</p>
-    <div class="img-area">
-      <img v-for="imgs in selectedWork.detailImg" :key="imgs" :src="require('../../assets/images/detail/' + imgs + '.jpg')">
+    <div class="inner" :class="{ vertical : selectedWork.imgVertical }">
+      <h1 class="pg-tit">{{ selectedWork.title }}</h1>
+      <p class="sub mb-30">{{ selectedWork.subTitle }}</p>
+      <p class="desc mb-30">{{ selectedWork.description }}</p>
+      <div class="img-area">
+        <img v-for="imgs in selectedWork.detailImg" :key="imgs" :src="require('../../assets/images/detail/' + imgs + '.jpg')">
+      </div>
     </div>
 
     <div class="bottom-cover"></div>
@@ -21,6 +23,11 @@ export default {
   validate({params}) { 
     return /^\d+$/.test(params.id);
   },
+  data(){
+    return {
+      workID: this.$route.params.id,
+    }
+  },
   computed: {
     ...mapState(['workList']),
     selectedWork(){
@@ -29,10 +36,11 @@ export default {
       })
       return work[0]
     },
-  },
-  data(){
-    return {
-      workID: this.$route.params.id
+    checkCategory(){
+      return this.selectedWork.category
+    },
+    checkDirection(){
+      return this.selectedWork.direction
     }
   },
   watch: {
@@ -44,8 +52,10 @@ export default {
 </script>
 
 <style scoped>
-.detail { width:900px; margin:0 auto; padding-top:90px; }
-.detail .sub { font-size:18px; color:#bbb; }
-.detail .desc { font-size:17px; color:#888; }
-.detail .img-area img { width:100%; }
+.detail .inner { width:960px; margin:0 auto; padding-top:90px; }
+.detail .inner .sub { font-size:18px; color:#bbb; }
+.detail .inner .desc { font-size:17px; color:#888; }
+.detail .inner .img-area { margin-top:50px; }
+.detail .inner .img-area img { width:100%; margin-bottom:110px; }
+.detail .inner.vertical { width:700px; margin:0 auto; padding-top:90px; }
 </style>

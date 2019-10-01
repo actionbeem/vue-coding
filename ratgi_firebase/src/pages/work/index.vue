@@ -50,7 +50,7 @@ import { mapState } from 'vuex'
 export default {
   data(){
     return {
-      categories: ['Design','Publish'],
+      categories: ['Design','Publish','Idea'],
       selectedCategory: 'Design',
     }
   },
