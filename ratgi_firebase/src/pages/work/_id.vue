@@ -36,18 +36,7 @@ export default {
       })
       return work[0]
     },
-    checkCategory(){
-      return this.selectedWork.category
-    },
-    checkDirection(){
-      return this.selectedWork.direction
-    }
   },
-  watch: {
-    workID(val){
-      console.log(val)
-    }
-  }
 }
 </script>
 
