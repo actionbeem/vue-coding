@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style scoped>
-.work { width:1300px; margin:0 auto; padding-top:90px;}
+.work { width:1300px; margin:0 auto; padding-top:140px;}
 .work .list li { width:25%; float:left; padding:0 15px; box-sizing:border-box; margin-bottom:30px;}
 .work .list .thumb { margin-bottom:10px; border-radius:6px; overflow:hidden; }
 .work .list .thumb:hover { box-shadow:0 10px 10px rgba(0,0,0,0.1); transition:all .2s ease; }
@@ -90,6 +90,6 @@ export default {
 .fade-enter { opacity:0; margin-top:20px; }
 
 @media (max-width:1700px) {
-  /* .work-list { width:1300px; } */
+  .work { padding-top:90px;}
 }
 </style>

@@ -41,10 +41,14 @@ export default {
 </script>
 
 <style scoped>
-.detail .inner { width:960px; margin:0 auto; padding-top:90px; }
+.detail .inner { width:960px; margin:0 auto; padding-top:140px; }
 .detail .inner.vertical { width:700px; margin:0 auto; padding-top:90px; }
 .detail .inner .sub { font-size:18px; color:#bbb; }
 .detail .inner .img-area { margin-top:50px; }
 .detail .inner .img-area img { width:100%; margin-bottom:70px; }
 .detail .inner .desc { font-size:17px; line-height:1.6; color:#888; margin-bottom:110px; word-break: keep-all; }
+
+@media (max-width:1700px) {
+  .work { padding-top:90px;}
+}
 </style>

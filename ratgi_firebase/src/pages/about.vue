@@ -83,7 +83,7 @@ export default {
 </script>
 
 <style scoped>
-.detail-wrap { padding-top:90px; margin-bottom:100px; }
+.detail-wrap { padding-top:140px; margin-bottom:100px; }
 .detail-wrap .inner { width:900px; margin:0 auto; }
 
 .intro .desc { width:70%; float:left; padding-right:50px; box-sizing:border-box; font-size:17px; line-height:2; color:#999; font-weight:normal; word-break: keep-all; }
@@ -104,4 +104,8 @@ export default {
 .skill-wrap .label { font-size:15px; margin-bottom:10px; }
 .skill-wrap .gage { height:10px; background-color:#eee; border-radius:15px; position:relative; }
 .skill-wrap .bar { width:0; height:10px; border-radius:15px; position:absolute; top:0px; left:0px; }
+
+@media (max-width:1700px) {
+  .detail-wrap { padding-top:90px;}
+}
 </style>
