@@ -7,7 +7,7 @@
     { "id":5, "title": "Wall Cover", "subTitle": "UI/UX Concept Design", "thumb": "thumb_dias", "detailImg": ["dias"], "category": "Design", "description": "" },  
     { "id":6, "title": "SyncCommerce", "subTitle": "Dashboard Design", "thumb": "thumb_sync", "externalLink": "http://clab-publish.ajashop.co.kr/sync_renewal/info.html", "category": "Design", "description": "" },  
     { "id":7, "title": "BeautiFruit", "subTitle": "Web Design", "thumb": "thumb_beautifruit", "externalLink": "http://kjh8502.dothome.co.kr/beautifruit/index.html", "category": "Design", "description": "" },
-    { "id":8, "title": "Less", "subTitle": "Dashboard Design", "thumb": "thumb_sync", "externalLink": "http://clab-publish.ajashop.co.kr/sync_renewal/info.html", "category": "Design", "description": "" },
+    { "id":8, "title": "Mrkoon", "subTitle": "Web Page Design", "thumb": "thumb_mrkoon", "detailImg": ["mrkoon_01", "mrkoon_02", "mrkoon_03", "mrkoon_04"], "category": "Design", "description": "" },
 
 
     { "id":9, "title": "Hyungji", "subTitle": "패션그룹형지의 본사 공식 직영 쇼핑몰 - 형지몰", "thumb": "thumb_hyungji", "externalLink": "https://hyungjimall.com/", "category": "Publish", "description": "" },
