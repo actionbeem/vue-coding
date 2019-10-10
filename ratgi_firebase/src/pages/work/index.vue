@@ -9,35 +9,7 @@
           </li>
         </ul> 
       </div>
-      <ul class="list clear">
-        <transition-group name="fade" mode="out-in">
-          <li v-for="work in filterList" :key="work.id" :class="work.category">
-            <template v-if="work.externalLink">
-              <a :href="work.externalLink" target="blank">
-                <div class="thumb">
-                  <img :src="require('../../assets/images/' + work.thumb + '.jpg')" alt="">
-                </div>
-                <div>
-                  <p class="tit">{{ work.title }}</p>
-                  <p class="sub">{{ work.subTitle }}</p>
-                </div>
-              </a>
-            </template>
-
-            <template v-else>
-              <nuxt-link :to="`/work/${work.id}`">
-                <div class="thumb">
-                  <img :src="require('../../assets/images/' + work.thumb + '.jpg')" alt="">
-                </div>
-                <div>
-                  <p class="tit">{{ work.title }}</p>
-                  <p class="sub">{{ work.subTitle }}</p>
-                </div>
-              </nuxt-link>
-            </template>
-          </li>
-        </transition-group>
-      </ul>
+      <work-list :worklist="filterList"></work-list>
       <nuxt-child/>
     </div>
   </section>
@@ -46,6 +18,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import workList from '../../components/workList.vue'
 
 export default {
   data(){
@@ -53,6 +26,9 @@ export default {
       categories: ['Design','Publish','Idea'],
       selectedCategory: 'Design',
     }
+  },
+  components: {
+    workList
   },
   computed: {
     ...mapState(['workList']),
@@ -73,13 +49,6 @@ export default {
 
 <style scoped>
 .work { width:1300px; margin:0 auto; padding-top:140px;}
-.work .list li { width:25%; float:left; padding:0 15px; box-sizing:border-box; margin-bottom:30px;}
-.work .list .thumb { margin-bottom:10px; border-radius:6px; overflow:hidden; }
-.work .list .thumb:hover { box-shadow:0 10px 10px rgba(0,0,0,0.1); transition:all .2s ease; }
-.work .list .thumb img { width:100%; transform:scale(1); transition:all .3s ease;}
-.work .list .thumb:hover img { transform:scale(1.1); transition:all .3s ease; }
-.work .list .tit { font-size:18px; color:#666; margin-bottom:3px; }
-.work .list .sub { font-size:12px; color:#ccc; }
 .filter { margin-bottom:25px; }
 .filter li { display:inline-block; margin-right:7px; }
 .filter li button { font-size:15px; color:#333; padding:6px 18px; border-radius:25px;}
