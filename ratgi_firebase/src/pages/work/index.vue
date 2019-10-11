@@ -3,11 +3,11 @@
     <div class="work">
       <div class="inner-wrap">
         <h1 class="pg-tit mb-30">Work</h1>
-        <ul class="filter">
-          <li v-for="ctgr in categories" :key="ctgr" :class="{ active : ctgr === selectedCategory}">
-            <button @click="fatchCategory(ctgr)">{{ ctgr }}</button>
-          </li>
-        </ul> 
+        <category 
+          :categories="categories" 
+          :selectedCategory="selectedCategory"
+          @changeCategory="changeCategory">
+        </category>
       </div>
       <work-list :worklist="filterList"></work-list>
       <nuxt-child/>
@@ -19,6 +19,7 @@
 <script>
 import { mapState } from 'vuex'
 import workList from '../../components/workList.vue'
+import category from '../../components/category.vue'
 
 export default {
   data(){
@@ -28,7 +29,8 @@ export default {
     }
   },
   components: {
-    workList
+    workList,
+    category
   },
   computed: {
     ...mapState(['workList']),
@@ -40,7 +42,7 @@ export default {
     },
   },
   methods:{
-    fatchCategory(ctgr){
+    changeCategory(ctgr){
       this.selectedCategory = ctgr
     },
   },
@@ -49,11 +51,11 @@ export default {
 
 <style scoped>
 .work { width:1300px; margin:0 auto; padding-top:140px;}
-.filter { margin-bottom:25px; }
+/* .filter { margin-bottom:25px; }
 .filter li { display:inline-block; margin-right:7px; }
 .filter li button { font-size:15px; color:#333; padding:6px 18px; border-radius:25px;}
 .filter li button:hover { background-color:#eee; transition:all .3s ease; }
-.filter li.active button { background-color:#222 !important; color:#fff; }
+.filter li.active button { background-color:#222 !important; color:#fff; } */
 
 .fade-enter-active { transition: all .5s ease;  }
 .fade-enter { opacity:0; margin-top:20px; }
