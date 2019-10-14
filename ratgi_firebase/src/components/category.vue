@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  name: 'category',
   props: ['categories','selectedCategory'],
   methods:{
     fatchCategory(ctgr){

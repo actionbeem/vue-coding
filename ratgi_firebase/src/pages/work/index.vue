@@ -22,6 +22,7 @@ import workList from '../../components/workList.vue'
 import category from '../../components/category.vue'
 
 export default {
+  name: 'work',
   data(){
     return {
       categories: ['Design','Publish','Idea'],

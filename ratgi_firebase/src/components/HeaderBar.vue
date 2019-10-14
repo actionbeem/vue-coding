@@ -18,6 +18,7 @@
 
 <script>
 export default {
+  name: 'headerBar',
   data(){
     return {
       navList: ['about','work','blog'],

@@ -17,9 +17,6 @@ export default {
   computed: {
     ...mapState(['currentUserUid'])
   },
-  created(){
-
-  }
 }
 </script>
 
